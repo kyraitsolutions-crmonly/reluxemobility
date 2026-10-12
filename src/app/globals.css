@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-primary: #111827;
+  --color-secondary: #475569;
+  --color-tertiary: #F3F4F6;
+  --color-quaternary: #F8FAFC;
+  --color-dark: #111827;
+}
+
+
+
+body {
+  font-family: var(--font-plus-jakarta-sans);
+}
