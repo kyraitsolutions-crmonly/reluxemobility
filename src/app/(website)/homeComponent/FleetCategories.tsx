@@ -14,7 +14,7 @@ const FleetCategories: React.FC<FleetCategoriesProps> = ({
         <p className="text-secondary">{description}</p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 md:gap-6 gap-4 mt-10">
         {items.map((item) => (
           <FleetCategoriesCard key={item.id} {...item} className={""} />
         ))}
@@ -29,7 +29,7 @@ export const FleetCategoriesCard: React.FC<
   FleetCategoriesProps["items"][0] & { className?: string }
 > = ({ title, vehicles, className="" }) => {
   return (
-    <div className="flex flex-col items-center text-center space-y-2 px-6 py-5 border-2 border-tertiary rounded-2xl">
+    <div className="flex flex-col md:items-center md:text-center space-y-2 md:px-6 md:py-5 max-md:p-4 border-2 border-tertiary rounded-2xl">
       <h2 className="text-xl font-semibold">{title}</h2>
       <p className="text-secondary text-sm">{vehicles.join(", ")}</p>
     </div>

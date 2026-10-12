@@ -15,7 +15,7 @@ const BrowseFleet: React.FC<BrowseFleetProps> = ({
         <p className="text-secondary">{description}</p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
         {items.map((item) => (
           <BrowseFleetCard key={item.id} {...item} />
         ))}

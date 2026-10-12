@@ -7,9 +7,9 @@ const WebSiteFooter = () => {
   return (
     <footer className="bg-dark text-white max_screen_width max-lg:py-10 lg:pt-18 lg:pb-10">
       <Container>
-        <div className="grid lg:grid-cols-[auto_auto_auto_auto_auto] md:grid-cols-2 grid-cols-1 gap-6">
+        <div className="grid lg:grid-cols-[auto_auto_auto_auto_auto] grid-cols-2  gap-6">
           {/* logo */}
-          <div className="max-w-sm">
+          <div className="max-w-sm max-md:col-span-2">
             <Link
               href="/"
               className="block relative w-[340px] max-md:mx-auto aspect-[4/.6]"
