@@ -14,17 +14,17 @@ const Hero: React.FC<HeroProps> = ({
   return (
     <Section
       defaultPadding={false}
-      className="relative w-full aspect-4/3.5 xl:aspect-16/6.5 lg:aspect-16/9"
+      className="relative w-full aspect-4/10 min-[375px]:aspect-4/10 min-[430px]:aspect-4/8.25 md:aspect-16/11 lg:aspect-video xl:aspect-16/6.5"
     >
-      <Image src={img} alt={title} fill className="object-cover object-left" />
+      <Image src={img} alt={title} fill className="object-cover lg:object-left max-lg:object-right/[55%]" />
       <div className="absolute inset-0 bg-black/35 z-10" />
       <div className="absolute inset-0 z-20 flex items-center justify-center text-white">
         <Container className="space-y-12">
           <div className="max-w-3xl space-y-5">
-            <p className="px-3 py-2.5 text-sm rounded-full backdrop-blur-xs bg-white/10 border border-white/[18.82%] w-fit ">
+            <p className="px-3 py-2.5 md:text-sm text-xs rounded-full backdrop-blur-xs bg-white/10 border border-white/[18.82%] w-fit ">
               {eyebrow}
             </p>
-            <h1 className="text-4xl md:text-5xl/tight font-semibold">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl/tight font-semibold">
               {title}
             </h1>
             <p className="text-lg">{description}</p>
@@ -38,7 +38,7 @@ const Hero: React.FC<HeroProps> = ({
               ))}
             </div>
           </div>
-          <div className="max-w-3xl grid grid-cols-3 gap-6 max-lg:">
+          <div className="max-w-3xl grid md:grid-cols-3 grid-cols-1 gap-6 ">
             {highlights.map((highlight, index) => (
               <Card key={index} {...highlight} />
             ))}
