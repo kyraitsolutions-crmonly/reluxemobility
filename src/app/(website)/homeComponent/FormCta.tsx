@@ -1,4 +1,5 @@
 import { FinalCtaProps } from "@/@types/homePageType";
+import Form2 from "@/components/Forms/Form2";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeading } from "@/components/typography";
 import Link from "next/link";
@@ -27,6 +28,9 @@ const FormCta: React.FC<FinalCtaProps> = ({
           </ul>
         </div>
         {/* contact form */}
+        <div className="">
+          <Form2 />
+        </div>
       </div>
     </SectionWithContainer>
   );

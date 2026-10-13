@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-datepicker/dist/react-datepicker.css";
 
 :root {
   --background: #ffffff;
@@ -17,4 +18,52 @@
 
 body {
   font-family: var(--font-plus-jakarta-sans);
+}
+
+.form-datepicker-calendar {
+  border: 1px solid #e5e7eb !important;
+  border-radius: 16px !important;
+  box-shadow: 0 16px 36px rgb(17 24 39 / 16%);
+  color: #374151;
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  overflow: hidden;
+}
+
+.form-datepicker-calendar .react-datepicker__header {
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  padding-top: 14px;
+}
+
+.form-datepicker-calendar .react-datepicker__current-month,
+.form-datepicker-calendar .react-datepicker-time__header,
+.form-datepicker-calendar .react-datepicker-year-header {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-datepicker-calendar .react-datepicker__day-name {
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.form-datepicker-day {
+  border-radius: 8px !important;
+  color: #374151;
+}
+
+.form-datepicker-calendar .react-datepicker__day:hover {
+  background: #f3f4f6;
+}
+
+.form-datepicker-calendar .react-datepicker__day--selected,
+.form-datepicker-calendar .react-datepicker__day--keyboard-selected {
+  background: #111827;
+  color: #fff;
+}
+
+.form-datepicker-calendar .react-datepicker__navigation-icon::before {
+  border-color: #374151;
 }
