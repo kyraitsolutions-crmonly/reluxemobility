@@ -1,9 +1,21 @@
+/**
+ * To hide a page, set its href to "#". It disappears from the menu and the sitemap,
+ * while its sub links (and their pages) keep working. Put the real path back to show it again.
+ */
+export const isPageLink = (href: string) => href.startsWith("/");
+
+/** True when the current page belongs to this nav link (ignores the #section part) */
+export const isActiveLink = (pathname: string, href: string) => {
+  const path = href.split("#")[0];
+  return isPageLink(path) && path !== "/" && pathname.startsWith(path);
+};
+
 export const NavLink = {
-  logo: "/home/logo.png",
+  logo: "/logo/reluxe-horizontal-navy.svg",
   links: [
     {
       label: "About",
-      href: "#",
+      href: "/about-us",
     },
     {
       label: "Services",
@@ -11,19 +23,19 @@ export const NavLink = {
       subLinks: [
         {
           label: "Hourly & City Rentals",
-          href: "#",
+          href: "/services/hourly-rental",
         },
         {
           label: "Airport Transfers",
-          href: "#",
+          href: "/services/airport-transfers",
         },
         {
           label: "Outstation Travel",
-          href: "#",
+          href: "/services/outstation-travel",
         },
         {
-          label: "Corporate & PSU Solutions",
-          href: "#",
+          label: "Corporate & PSU Velvet Service",
+          href: "/services/corporate-psu",
         },
       ],
     },
@@ -33,34 +45,38 @@ export const NavLink = {
       subLinks: [
         {
           label: "Compact / Sedans",
-          href: "#",
+          href: "/fleet/compact-sedans",
         },
         {
           label: "Premium Sedans",
-          href: "#",
+          href: "/fleet/premium-sedans",
         },
         {
           label: "Premium SUVs / MUVs",
-          href: "#",
+          href: "/fleet/premium-suvs",
         },
         {
           label: "Green Fleet (EVs)",
-          href: "#",
+          href: "/fleet/green-fleet",
         },
         {
           label: "Luxury Fleet",
-          href: "#",
+          href: "/fleet/luxury-fleet",
         },
       ],
     },
 
     {
       label: "Contact",
-      href: "#",
+      href: "/contact-us",
+    },
+    {
+      label: "Corporate Rental",
+      href: "/corporate-car-rental",
     },
     {
       label: "Book Now",
-      href: "",
+      href: "/contact-us#contact",
     },
   ],
 };

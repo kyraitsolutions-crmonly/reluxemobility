@@ -10,20 +10,22 @@ export const metadata: Metadata = {
     template: "%s | Reluxe Mobility",
   },
   description:
-    "Discover premium mobility solutions with Reluxe Mobility. Explore innovative products designed for comfort, independence, and everyday ease.",
+    "Reluxe Mobility offers premium car rental and chauffeur services — reliable, seamless, luxury-first travel for retail and corporate clients, with signature white-glove Velvet Services for corporates and PSUs.",
   keywords: [
-    "mobility solutions",
-    "mobility products",
     "Reluxe Mobility",
-    "mobility aids",
-    "independent living",
-    "daily support",
+    "premium car rental",
+    "chauffeur service",
+    "corporate car rental",
+    "PSU transport services",
+    "airport transfers",
+    "outstation cabs",
+    "luxury car hire",
   ],
   applicationName: "Reluxe Mobility",
   openGraph: {
     title: "Reluxe Mobility",
     description:
-      "Premium mobility solutions designed to support comfort, independence, and confidence in everyday life.",
+      "Premium car rental & chauffeur mobility solutions — reliable, seamless and luxury-first, anchored by our signature Velvet Services.",
     url: "https://www.reluxemobility.com",
     siteName: "Reluxe Mobility",
     locale: "en_US",
@@ -33,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reluxe Mobility",
     description:
-      "Premium mobility solutions designed to support comfort, independence, and confidence in everyday life.",
+      "Premium car rental & chauffeur mobility solutions — reliable, seamless and luxury-first, anchored by our signature Velvet Services.",
   },
 };
 

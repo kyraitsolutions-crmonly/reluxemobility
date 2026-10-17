@@ -116,12 +116,12 @@ export const homePageData = {
       {
         id: "premium-suvs",
         title: "Premium SUVs",
-        vehicles: ["Toyota Innova Hycross", "Maruti Invicto"],
+        vehicles: ["Toyota Innova Hycross", "Maruti Suzuki Invicto"],
       },
       {
         id: "green-fleet",
         title: "Green Fleet (EVs)",
-        vehicles: ["Premium Electric SUVs (BYD, Volvo)"],
+        vehicles: ["Premium Electric SUVs"],
       },
       {
         id: "luxury-fleet",
@@ -210,11 +210,11 @@ export const homePageData = {
     description: "Serving leading public sector enterprises across the nation.",
 
     organizations: [
-      { id: "sail", name: "SAIL" },
+      { id: "sai", name: "SAI" },
       { id: "iocl", name: "IOCL" },
       { id: "bpcl", name: "BPCL" },
       { id: "gail", name: "GAIL" },
-      { id: "rdsso", name: "RDSSO" },
+      { id: "rdso", name: "RDSO" },
       { id: "stpi", name: "STPI" },
       { id: "ntpc", name: "NTPC" },
       { id: "npcl", name: "NPCL" },

@@ -15,7 +15,7 @@ const VelvetServiceSection: React.FC<VelvetServiceSectionProps> = ({
       sectionId={id}
       sectionClassName="bg-dark"
     >
-      <div className="grid lg:grid-cols-2 gap-16 md:p-16 p-6 items-center bg-[#0A0F1A66] border border-[#3741510D] lg:rounded-[64px] rounded-3xl">
+      <div className="grid lg:grid-cols-2 gap-16 md:p-16 p-6 items-center bg-navy-deep/40 border border-[#3741510D] lg:rounded-[64px] rounded-3xl">
         <div className="space-y-6 ">
           <SectionHeading
             title={title}

@@ -26,6 +26,7 @@ export default function LazyLoadedVideo({
           src={poster}
           alt="Video Poster"
           fill
+          sizes="100vw"
           className="object-cover"
         />
       )}

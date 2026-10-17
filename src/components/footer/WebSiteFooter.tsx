@@ -12,13 +12,14 @@ const WebSiteFooter = () => {
           <div className="max-w-sm max-md:col-span-2">
             <Link
               href="/"
-              className="block relative w-[340px] max-md:mx-auto aspect-[4/.6]"
+              className="block relative w-60 max-md:mx-auto aspect-[3.95/1]"
             >
               <Image
                 src={WebsiteFooterLinks.logo}
                 alt="logo"
                 fill
-                className="object-cover"
+                sizes="240px"
+                className="object-contain"
               />
             </Link>
             <p className="text-sm mt-4">{WebsiteFooterLinks.description}</p>

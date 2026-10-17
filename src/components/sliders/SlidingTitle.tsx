@@ -22,7 +22,7 @@ export default function SlidingTitle({
               aria-hidden={i >= items.length}
               className="marquee-item  tracking-widest"
             >
-              <span className="flex items-center justify-center gap-2 border border-[#E5E7EB] rounded-2xl bg-quaternary py-3 px-4 w-full">
+              <span className="flex items-center justify-center gap-2 border border-line rounded-2xl bg-quaternary py-3 px-4 w-full">
                 {t.name}
               </span>
               {/* <span className="separator">
@@ -46,7 +46,7 @@ export const ICon = () => (
   >
     <path
       d="M5.544 11.077L-4.60818e-06 5.544L5.544 3.57628e-07L11.077 5.544L5.544 11.077ZM5.544 10.076L10.076 5.544L5.544 1.001L1.012 5.544L5.544 10.076ZM5.544 7.843L3.234 5.544L5.544 3.234L7.854 5.544L5.544 7.843Z"
-      fill="#A68668"
+      fill="#E0C7A3"
     />
   </svg>
 );

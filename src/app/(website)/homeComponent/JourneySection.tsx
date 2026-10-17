@@ -9,7 +9,7 @@ const JourneySection: React.FC<JourneySectionProps> = ({
   benefits,
 }) => {
   return (
-    <SectionWithContainer sectionClassName="bg-[#F8FAFC]">
+    <SectionWithContainer sectionId="booking" sectionClassName="bg-quaternary scroll-mt-20">
       <div className="grid lg:grid-cols-[.7fr_1fr] gap-4">
         <div className="flex flex-col gap-6">
           <SectionHeading title={title} />

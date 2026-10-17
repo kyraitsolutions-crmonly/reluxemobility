@@ -3,67 +3,82 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1A3758;
 }
 
+/* Brand palette — public/Reluxe_Mobility_Logo/Logo Identity.jpg
+   Midnight Navy #1A3758 · Champagne Beige #E0C7A3 · Warm Ivory #F9F6EF · Pure White #FFFFFF */
 @theme inline {
-  --color-primary: #111827;
-  --color-secondary: #475569;
-  --color-tertiary: #F3F4F6;
-  --color-quaternary: #F8FAFC;
-  --color-dark: #111827;
+  --color-primary: #1A3758;
+  /* text: navy for headings/body, navy-tinted slate for secondary copy, muted for hints */
+  --color-secondary: #4A5A70;
+  --color-muted: #66768B;
+  /* warm ivory-toned borders and dividers */
+  --color-line: #E6E0D4;
+  --color-line-strong: #D6CEBF;
+  --color-tertiary: #F1ECE2;
+  --color-quaternary: #F9F6EF;
+  --color-dark: #1A3758;
+  /* deepest navy, for dark sections and the dark form fields */
+  --color-navy-deep: #0F2238;
+  --color-beige: #E0C7A3;
+  --color-ivory: #F9F6EF;
+  /* champagne darkened so it stays readable as text and under white button labels on light pages */
+  --color-accent: #9C7B4F;
+  --color-error: #DC2626;
 }
 
 
 
 body {
-  font-family: var(--font-plus-jakarta-sans);
+  font-family: var(--font-montserrat), sans-serif;
+  color: var(--color-dark);
 }
 
 .form-datepicker-calendar {
-  border: 1px solid #e5e7eb !important;
+  border: 1px solid #e6e0d4 !important;
   border-radius: 16px !important;
-  box-shadow: 0 16px 36px rgb(17 24 39 / 16%);
-  color: #374151;
-  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  box-shadow: 0 16px 36px rgb(26 55 88 / 16%);
+  color: #1a3758;
+  font-family: var(--font-montserrat), sans-serif;
   overflow: hidden;
 }
 
 .form-datepicker-calendar .react-datepicker__header {
-  background: #f9fafb;
-  border-bottom: 1px solid #e5e7eb;
+  background: #f9f6ef;
+  border-bottom: 1px solid #e6e0d4;
   padding-top: 14px;
 }
 
 .form-datepicker-calendar .react-datepicker__current-month,
 .form-datepicker-calendar .react-datepicker-time__header,
 .form-datepicker-calendar .react-datepicker-year-header {
-  color: #111827;
+  color: #1a3758;
   font-size: 14px;
   font-weight: 700;
 }
 
 .form-datepicker-calendar .react-datepicker__day-name {
-  color: #6b7280;
+  color: #66768b;
   font-size: 12px;
   font-weight: 600;
 }
 
 .form-datepicker-day {
   border-radius: 8px !important;
-  color: #374151;
+  color: #1a3758;
 }
 
 .form-datepicker-calendar .react-datepicker__day:hover {
-  background: #f3f4f6;
+  background: #f1ece2;
 }
 
 .form-datepicker-calendar .react-datepicker__day--selected,
 .form-datepicker-calendar .react-datepicker__day--keyboard-selected {
-  background: #111827;
+  background: #1a3758;
   color: #fff;
 }
 
 .form-datepicker-calendar .react-datepicker__navigation-icon::before {
-  border-color: #374151;
+  border-color: #1a3758;
 }

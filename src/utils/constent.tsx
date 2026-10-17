@@ -1,18 +1,17 @@
-export const enCodeText = encodeURIComponent(`Hi Aroha Palms Team,
+export const enCodeText = encodeURIComponent(`Hi Reluxe Mobility Team,
 
-I'm interested in booking a stay at Aroha Palms.
+I'm interested in booking a chauffeur-driven ride.
 
-Please share the best available options and rates.
+Please share the available vehicles and rates.
 
 Thank you!`);
 
 
 export const contact = {
-  email: "reserve@arohapalms.com",
+  email: "", // to be confirmed
   mapUrl: "",
   phone: ["+91 12345 12345"],
-  address:
-    "Salasar, Churu District, Rajasthan",
+  address: "", // to be confirmed
   addressLink: "",
   socialMedia: {
     facebook: "https://www.facebook.com",

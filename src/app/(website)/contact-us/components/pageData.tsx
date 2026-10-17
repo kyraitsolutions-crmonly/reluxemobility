@@ -1,43 +1,59 @@
+import { LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 
 export const contactUsPageData = {
   hero: {
-    eyebrow: "Premium Mobility Support & Inquiries",
+    eyebrow: "Support & Inquiries",
     title: "Get in Touch",
     description:
       "Our dedicated team can assist with premium chauffeur services and corporate mobility requirements.",
-    image: "",
+    image: "/home/hero.jpg",
   },
 
-  contactInformation: {
-    title: "Contact Information",
+  contactSection: {
+    id: "contact",
 
-    items: [
-      {
-        id: "headquarters",
-        title: "Our Headquarters",
-        description: "Address to be confirmed",
-        icon: "map-pin",
-      },
-      {
-        id: "real-time-support",
-        title: "Real-Time Support",
-        description: "Phone details to be confirmed",
-        icon: "phone",
-      },
-      {
-        id: "email-correspondence",
-        title: "Email Correspondence",
-        description: "Email details to be confirmed",
-        icon: "mail",
-      },
-    ],
-  },
+    contactInformation: {
+      title: "Contact Information",
 
-  trustedClients: {
-    eyebrow: "Trusted Clients",
-    title: "Trusted by PSUs & Government",
-    description:
-      "Trusted by SAI, IOCL and major public sector enterprises.",
+      items: [
+        {
+          id: "headquarters",
+          title: "Our Headquarters",
+          description: "Address to be confirmed",
+          icon: <LuMapPin />,
+        },
+        {
+          id: "real-time-support",
+          title: "Real-Time Support",
+          description: "Phone details to be confirmed",
+          icon: <LuPhone />,
+        },
+        {
+          id: "email-correspondence",
+          title: "Email Correspondence",
+          description: "Email details to be confirmed",
+          icon: <LuMail />,
+        },
+      ],
+    },
+
+    trustedClients: {
+      eyebrow: "Trusted Clients",
+      title: "Trusted by PSUs & Government",
+      description:
+        "Trusted by SAI, IOCL and major public sector enterprises.",
+    },
+
+    enquiryForm: {
+      title: "Send an Enquiry",
+      serviceTypes: [
+        "Corporate & PSU Velvet Service",
+        "Hourly / City Rental",
+        "Airport Transfers",
+        "Outstation Travel",
+        "Other",
+      ],
+    },
   },
 
   locationSection: {
@@ -89,12 +105,10 @@ export const contactUsPageData = {
       {
         label: "Get Started Now",
         href: "#contact",
-        variant: "primary",
       },
       {
         label: "View Our Fleet",
-        href: "#fleet",
-        variant: "secondary",
+        href: "/#fleet",
       },
     ],
   },

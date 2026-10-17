@@ -1,3 +1,4 @@
+import { LuCircleHelp, LuCrown, LuWandSparkles } from "react-icons/lu";
 
 export const aboutUsPageData = {
   hero: {
@@ -10,16 +11,14 @@ export const aboutUsPageData = {
       {
         label: "Our Story",
         href: "#our-story",
-        variant: "primary",
       },
       {
         label: "Contact Us",
-        href: "/contact",
-        variant: "secondary",
+        href: "/contact-us",
       },
     ],
 
-    image: "",
+    image: "/home/hero.jpg",
   },
 
   storySection: {
@@ -33,7 +32,7 @@ export const aboutUsPageData = {
       'Our mission is to provide an unmatched "Velvet Experience" — a fusion of state-of-the-art fleet management, highly trained professionals, and a customer-centric approach that ensures every journey is as memorable as it is safe.',
     ],
 
-    image: "",
+    image: "/home/psu.png",
 
     statistics: [
       {
@@ -60,32 +59,33 @@ export const aboutUsPageData = {
         title: "Reliability",
         description:
           "Unwavering punctuality and consistent performance. We understand that time is your most valuable asset, and we guard it fiercely.",
-        icon: "shield-check",
+        icon: <LuCircleHelp />,
       },
       {
         id: "seamlessness",
         title: "Seamlessness",
         description:
           "From booking to drop-off, every touchpoint is designed to be frictionless. Our technology integrates deeply with your travel needs.",
-        icon: "zap",
+        icon: <LuWandSparkles />,
       },
       {
         id: "luxury-first",
         title: "Luxury-First",
         description:
           "We don't just provide cars; we provide environments. High-quality interiors, premium amenities, and a quiet sanctuary from the world.",
-        icon: "crown",
+        icon: <LuCrown />,
       },
     ],
   },
 
   velvetServiceStandard: {
+    id: "velvet-standard",
     eyebrow: "Signature Standard",
     title: "The Velvet Service Standard",
     description:
       'Our signature "Velvet Service" isn\'t just a name — it\'s a meticulously engineered protocol for excellence. We\'ve set the benchmark for white-glove corporate mobility.',
 
-    image: "",
+    image: "/home/hero.jpg",
 
     features: [
       {
@@ -157,6 +157,10 @@ export const aboutUsPageData = {
         id: "npcl",
         name: "NPCL",
       },
+      {
+        id: "cci",
+        name: "CCI",
+      },
     ],
   },
 
@@ -168,16 +172,14 @@ export const aboutUsPageData = {
     buttons: [
       {
         label: "Book Your Ride Now",
-        href: "#booking",
-        variant: "primary",
+        href: "/contact-us#contact",
       },
       {
         label: "View Pricing",
         href: "/pricing",
-        variant: "secondary",
       },
     ],
 
-    backgroundImage: "",
+    backgroundImage: "/home/hero.jpg",
   },
 };
