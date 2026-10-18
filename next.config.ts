@@ -22,12 +22,7 @@ const nextConfig: NextConfig = {
     minimumCacheTTL: 14400,
   },
 
-  compiler: {
-    removeConsole: {
-      exclude: ["error", "warn"],
-    },
-  },
-
+  
   poweredByHeader: false,
 };
 

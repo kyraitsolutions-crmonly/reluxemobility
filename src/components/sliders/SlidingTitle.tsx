@@ -1,13 +1,14 @@
+import Image from "next/image";
 import "./sliding.title.scss";
 
 export default function SlidingTitle({
   items,
   ariaHidden = false,
 }: {
-  items: { id: string; name: string }[];
+  items: { id: string; name: string; logo: string }[];
   ariaHidden?: boolean;
 }) {
-  const titles = [...items, ...items, ...items];
+  const titles = items;
 
   return (
     <div
@@ -22,8 +23,17 @@ export default function SlidingTitle({
               aria-hidden={i >= items.length}
               className="marquee-item  tracking-widest"
             >
-              <span className="flex items-center justify-center gap-2 border border-line rounded-2xl bg-quaternary py-3 px-4 w-full">
-                {t.name}
+              <span className=" border border-line rounded-2xl flex flex-col justify-between gap-4 items-start py-3 px-4 w-full h-full">
+                {/* <div className="relative w-full aspect-4/2.75"> */}
+                  <Image
+                    src={t.logo}
+                    alt={t.name}
+                    width={100}
+                    height={100}
+                    className="object-contain"
+                  />
+                {/* </div> */}
+                <span className="font-semibold text-center flex items-center justify-center w-full">{t.name}</span>
               </span>
               {/* <span className="separator">
                 <ICon />

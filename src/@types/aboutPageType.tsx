@@ -47,6 +47,6 @@ export interface TrustedEntitiesProps {
   organizations: {
     id: string;
     name: string;
-    fullName?: string;
+    logo: string;
   }[];
 }

@@ -41,7 +41,8 @@ export const corporatePageData = {
     ],
     form: {
       title: "Help Us With Your Requirements",
-      description: "Share a few details and our corporate desk will set up your account.",
+      description:
+        "Share a few details and our corporate desk will set up your account.",
       businessVolumes: [
         "Less than ₹50,000",
         "₹50,000 to ₹1,00,000",
@@ -54,17 +55,52 @@ export const corporatePageData = {
 
   trustedOrganizations: {
     title: "Trusted by Major PSUs & Government Bodies",
-    description: "A proven track record serving leading public sector enterprises across the nation.",
+    description:
+      "A proven track record serving leading public sector enterprises across the nation.",
     organizations: [
-      { id: "sai", name: "SAI" },
-      { id: "iocl", name: "IOCL" },
-      { id: "bpcl", name: "BPCL" },
-      { id: "gail", name: "GAIL" },
-      { id: "rdso", name: "RDSO" },
-      { id: "stpi", name: "STPI" },
-      { id: "npcl", name: "NPCL" },
-      { id: "ntpc", name: "NTPC" },
-      { id: "cci", name: "CCI" },
+      {
+        id: "tribal",
+        name: "Ministry of Tribal Affairs",
+        logo: "/logos/tribal.png",
+      },
+      { id: "sai", name: "SAI", logo: "/logos/sai.png" },
+      { id: "mca", name: "MCA", logo: "/logos/mca.png" },
+      // { id: "dpe", name: "DPE" },
+      // { id: "msde", name: "MSDE" },
+      // { id: "acs-revenue", name: "ACS-REVENUE" },
+      // { id: "sez", name: "SEZ" },
+      // { id: "cbdt", name: "CBDT" },
+      // { id: "gad", name: "GAD" },
+      // { id: "sspl", name: "SSPL" },
+      //  { id: "pfa", name: "PFA" },
+      { id: "stpi", name: "STPI", logo: "/logos/stpi.jpeg" },
+      { id: "rdso", name: "RDSO", logo: "/logos/rdso.png" },
+      { id: "nsdc", name: "NSDC", logo: "/logos/nsdc.png" },
+      { id: "cci", name: "CCI", logo: "/logos/cci.png" },
+      { id: "dvc", name: "DVC", logo: "/logos/dvc.png" },
+      { id: "dfccil", name: "DFCCIL", logo: "/logos/dfccil.png" },
+      { id: "gnida", name: "GNIDA", logo: "/logos/gnida.png" },
+      { id: "aai", name: "AAI", logo: "/logos/aai.png" },
+      { id: "ncrtc", name: "NCRTC", logo: "/logos/ncrtc.png" },
+      { id: "dopt", name: "DOPT", logo: "/logos/dopt.png" },
+      { id: "eil", name: "EIL", logo: "/logos/eil.png" },
+      { id: "ncpcr", name: "NCPCR", logo: "/logos/ncpcr.png" },
+      { id: "nbcc", name: "NBCC", logo: "/logos/nbcc.png" },
+      { id: "concor", name: "CONCOR", logo: "/logos/concor.png" },
+      { id: "msme", name: "MSME", logo: "/logos/msme.png" },
+      { id: "iocl", name: "IOCL", logo: "/logos/iocl.png" },
+      { id: "rpf", name: "RPF", logo: "/logos/rpf.png" },
+      { id: "niesbud", name: "NIESBUD", logo: "/logos/niesbud.png" },
+      { id: "dahd", name: "DAHD", logo: "/logos/dahd.png" },
+      { id: "irieen", name: "IRIEEN", logo: "/logos/irieen.png" },
+
+      { id: "gail", name: "GAIL", logo: "/logos/gail.png" },
+      { id: "ircon", name: "IRCON", logo: "/logos/ircon.png" },
+      { id: "npcil", name: "NPCIL", logo: "/logos/npcil.png" },
+      { id: "thdc", name: "THDC", logo: "/logos/thdc.png" },
+      { id: "bpcl", name: "BPCL", logo: "/logos/bpcl.png" },
+
+      { id: "cdac", name: "CDAC", logo: "/logos/cdac.png" },
     ],
   },
 
@@ -121,34 +157,39 @@ export const corporatePageData = {
 
   solutions: {
     title: "Corporate Mobility Solutions",
-    description: "Flexible services that cover every way your organization travels.",
+    description:
+      "Flexible services that cover every way your organization travels.",
     linkLabel: "View Service",
     items: [
       {
         id: "executive-travel",
         title: "Executive & Daily Travel",
-        description: "Hourly and full-day chauffeur packages for meetings, site visits and city travel.",
+        description:
+          "Hourly and full-day chauffeur packages for meetings, site visits and city travel.",
         image: "/home/premium.png",
         href: "/services/hourly-rental",
       },
       {
         id: "airport-transfers",
         title: "Airport Transfers",
-        description: "Guaranteed on-time pickups and drops with live flight tracking.",
+        description:
+          "Guaranteed on-time pickups and drops with live flight tracking.",
         image: "/home/psu.png",
         href: "/services/airport-transfers",
       },
       {
         id: "outstation",
         title: "Intercity & Outstation",
-        description: "One-way and round trips with experienced highway chauffeurs.",
+        description:
+          "One-way and round trips with experienced highway chauffeurs.",
         image: "/home/luxury.png",
         href: "/services/outstation-travel",
       },
       {
         id: "vip-movement",
         title: "VIP & Delegation Movement",
-        description: "Secure, discreet mobility for senior officials and visiting delegations.",
+        description:
+          "Secure, discreet mobility for senior officials and visiting delegations.",
         image: "/home/economy.png",
         href: "/services/corporate-psu",
       },
@@ -157,7 +198,8 @@ export const corporatePageData = {
 
   onboarding: {
     title: "Getting Started is Simple",
-    description: "From first enquiry to your first ride, our corporate desk handles the details.",
+    description:
+      "From first enquiry to your first ride, our corporate desk handles the details.",
     steps: [
       {
         id: "share-requirements",
@@ -182,7 +224,8 @@ export const corporatePageData = {
 
   faqSection: {
     title: "Corporate Rental FAQs",
-    description: "Answers to common questions from travel desks and admin teams.",
+    description:
+      "Answers to common questions from travel desks and admin teams.",
     items: [
       {
         id: "who-can-apply",
@@ -212,7 +255,8 @@ export const corporatePageData = {
   },
 
   finalCta: {
-    title: 'Move Your Organization the <span class="text-accent">Velvet Way</span>',
+    title:
+      'Move Your Organization the <span class="text-accent">Velvet Way</span>',
     description:
       "Partner with Reluxe Mobility for reliable, secure and luxury-first corporate travel.",
     buttons: [

@@ -81,6 +81,7 @@ export interface TrustedOrganizationsProps {
   organizations: {
     id: string;
     name: string;
+    logo: string;
   }[];
 }
 

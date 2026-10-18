@@ -8,6 +8,7 @@ const TrustedOrganizations: React.FC<TrustedOrganizationsProps> = ({
   description,
   organizations,
 }) => {
+  console.log("logos", organizations.length);
   return (
     <SectionWithContainer containerClassName="md:space-y-16 space-y-10">
       <div className="text-center space-y-3">
