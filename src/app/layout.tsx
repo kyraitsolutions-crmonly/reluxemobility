@@ -22,7 +22,7 @@ export default function RootLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} h-full antialiased`}
+        className={`${montserrat.variable} h-full antialiased overflow-x-clip`}
         suppressHydrationWarning={true}
       >
         {children}

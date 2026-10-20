@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({
   return (
     <Section
       defaultPadding={false}
-      className="relative w-full aspect-4/10 min-[375px]:aspect-4/10 min-[430px]:aspect-4/8.25 md:aspect-16/11 lg:aspect-video xl:aspect-16/6.5"
+      className="relative w-full z-0 aspect-4/10 min-[375px]:aspect-4/10 min-[430px]:aspect-4/8.25 md:aspect-16/11 lg:aspect-video xl:aspect-16/6.5"
     >
       <Image src={img} alt={title} fill priority sizes="100vw" className="object-cover lg:object-left max-lg:object-right/[55%]" />
       <div className="absolute inset-0 bg-navy-deep/45 z-10" />

@@ -114,10 +114,10 @@ export const WebsiteFooterLinks: FooterLinks = {
           label: "Outstation Travel",
           href: "/services/outstation-travel",
         },
-        {
-          label: "Corporate & PSU Velvet Service",
-          href: "/services/corporate-psu",
-        },
+        // {
+        //   label: "Corporate & PSU Velvet Service",
+        //   href: "/services/corporate-psu",
+        // },
       ],
     },
     {

@@ -1,9 +1,7 @@
 import { ServiceDetailData } from "@/@types/servicesPageType";
 import {
-  LuBuilding2,
   LuCalendarClock,
   LuClock,
-  LuFileText,
   LuHeadset,
   LuMapPinned,
   LuPlane,
@@ -11,7 +9,7 @@ import {
   LuShieldCheck,
   LuShieldHalf,
   LuUsers,
-  LuWifi,
+  LuWifi
 } from "react-icons/lu";
 
 // shared across every service detail page
@@ -303,76 +301,76 @@ export const serviceDetailPageData: ServiceDetailData[] = [
     },
   },
 
-  {
-    slug: "corporate-psu",
-    metaData: {
-      title: "Corporate & PSU Velvet Service",
-      description:
-        "White-glove Velvet Service corporate mobility for PSUs, government bodies and enterprises — dedicated account managers, customized billing and high-security protocols.",
-      keyWords: ["corporate car rental", "PSU transport services", "government vehicle hire", "employee transportation", "corporate chauffeur service"],
-    },
-    hero: {
-      eyebrow: "Velvet Service for Institutions",
-      title: "Corporate & PSU",
-      highlight: "Velvet Service",
-      description:
-        "White-glove institutional mobility with dedicated account managers, customized billing, high-security protocol compliance and executive concierge-level hospitality.",
-      image: "/home/hero.jpg",
-    },
-    card: {
-      title: "Corporate & PSU Velvet Service",
-      description: "White-glove mobility for corporates and public sector enterprises.",
-      image: "/home/psu.png",
-    },
-    overview: {
-      title: "Mobility Built for Institutions",
-      paragraphs: [
-        "We specialize in serving the unique needs of Public Sector Undertakings (PSUs), government bodies and major corporations, with a proven track record serving SAI, IOCL, BPCL, GAIL, RDSO, STPI, NPCL, NTPC and CCI. Our Velvet Standard ensures full compliance with institutional travel policies.",
-        "A single account manager coordinates all of your travel, while standardized invoicing and MIS reporting make approvals and audits effortless. High-profile officials benefit from discreet, security-trained chauffeurs and vetted routes.",
-      ],
-      features: [
-        {
-          id: "account-managers",
-          title: "Dedicated Account Manager",
-          description:
-            "Single-point coordination for bookings, escalations and special requirements across your organization.",
-          icon: <LuUsers />,
-        },
-        {
-          id: "customized-billing",
-          title: "Customized Billing",
-          description:
-            "Monthly consolidated invoices, cost-center tagging and detailed MIS reports aligned to your policies.",
-          icon: <LuFileText />,
-        },
-        {
-          id: "high-security",
-          title: "High-Security Protocols",
-          description:
-            "Security-trained chauffeurs, vetted routes and strict confidentiality standards for VIP movement.",
-          icon: <LuShieldCheck />,
-        },
-        {
-          id: "concierge-hospitality",
-          title: "Concierge-Level Hospitality",
-          description:
-            "Executive concierge-level hospitality from uniformed chauffeurs trained in corporate and protocol etiquette.",
-          icon: <LuBuilding2 />,
-        },
-      ],
-    },
-    packages: {
-      title: "Engagement Models",
-      items: [
-        { id: "on-call", label: "On-Call Account", value: "Book As You Need" },
-        { id: "monthly", label: "Monthly Contract", value: "Dedicated Vehicles & Chauffeurs" },
-        { id: "vip-protocol", label: "VIP Protocol", value: "Senior Official Movement" },
-      ],
-      inclusions: [
-        "Dedicated account manager",
-        "Customized billing & MIS reporting",
-        "High-security protocol compliance",
-      ],
-    },
-  },
+  // {
+  //   slug: "corporate-psu",
+  //   metaData: {
+  //     title: "Corporate & PSU Velvet Service",
+  //     description:
+  //       "White-glove Velvet Service corporate mobility for PSUs, government bodies and enterprises — dedicated account managers, customized billing and high-security protocols.",
+  //     keyWords: ["corporate car rental", "PSU transport services", "government vehicle hire", "employee transportation", "corporate chauffeur service"],
+  //   },
+  //   hero: {
+  //     eyebrow: "Velvet Service for Institutions",
+  //     title: "Corporate & PSU",
+  //     highlight: "Velvet Service",
+  //     description:
+  //       "White-glove institutional mobility with dedicated account managers, customized billing, high-security protocol compliance and executive concierge-level hospitality.",
+  //     image: "/home/hero.jpg",
+  //   },
+  //   card: {
+  //     title: "Corporate & PSU Velvet Service",
+  //     description: "White-glove mobility for corporates and public sector enterprises.",
+  //     image: "/home/psu.png",
+  //   },
+  //   overview: {
+  //     title: "Mobility Built for Institutions",
+  //     paragraphs: [
+  //       "We specialize in serving the unique needs of Public Sector Undertakings (PSUs), government bodies and major corporations, with a proven track record serving SAI, IOCL, BPCL, GAIL, RDSO, STPI, NPCL, NTPC and CCI. Our Velvet Standard ensures full compliance with institutional travel policies.",
+  //       "A single account manager coordinates all of your travel, while standardized invoicing and MIS reporting make approvals and audits effortless. High-profile officials benefit from discreet, security-trained chauffeurs and vetted routes.",
+  //     ],
+  //     features: [
+  //       {
+  //         id: "account-managers",
+  //         title: "Dedicated Account Manager",
+  //         description:
+  //           "Single-point coordination for bookings, escalations and special requirements across your organization.",
+  //         icon: <LuUsers />,
+  //       },
+  //       {
+  //         id: "customized-billing",
+  //         title: "Customized Billing",
+  //         description:
+  //           "Monthly consolidated invoices, cost-center tagging and detailed MIS reports aligned to your policies.",
+  //         icon: <LuFileText />,
+  //       },
+  //       {
+  //         id: "high-security",
+  //         title: "High-Security Protocols",
+  //         description:
+  //           "Security-trained chauffeurs, vetted routes and strict confidentiality standards for VIP movement.",
+  //         icon: <LuShieldCheck />,
+  //       },
+  //       {
+  //         id: "concierge-hospitality",
+  //         title: "Concierge-Level Hospitality",
+  //         description:
+  //           "Executive concierge-level hospitality from uniformed chauffeurs trained in corporate and protocol etiquette.",
+  //         icon: <LuBuilding2 />,
+  //       },
+  //     ],
+  //   },
+  //   packages: {
+  //     title: "Engagement Models",
+  //     items: [
+  //       { id: "on-call", label: "On-Call Account", value: "Book As You Need" },
+  //       { id: "monthly", label: "Monthly Contract", value: "Dedicated Vehicles & Chauffeurs" },
+  //       { id: "vip-protocol", label: "VIP Protocol", value: "Senior Official Movement" },
+  //     ],
+  //     inclusions: [
+  //       "Dedicated account manager",
+  //       "Customized billing & MIS reporting",
+  //       "High-security protocol compliance",
+  //     ],
+  //   },
+  // },
 ];

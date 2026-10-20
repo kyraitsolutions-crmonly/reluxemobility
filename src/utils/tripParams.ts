@@ -5,9 +5,11 @@ import { TripDetails } from "@/@types/leadType";
 
 const MAX_LENGTH = 200;
 
-export const tripToSearchParams = (trip: TripDetails) => new URLSearchParams({ ...trip }).toString();
+export const tripToSearchParams = (trip: TripDetails) => {
+  return new URLSearchParams({ ...trip }).toString();
+};
 
-/** Returns the trip only when the link carries a full one; anything else is ignored. */
+/** Returns the trip only when the link carries all required details; incomplete links are ignored. */
 export const tripFromSearchParams = (params: URLSearchParams): TripDetails | null => {
   const read = (key: keyof TripDetails) => (params.get(key) ?? "").trim().slice(0, MAX_LENGTH);
   const trip: TripDetails = { from: read("from"), to: read("to"), date: read("date"), time: read("time") };

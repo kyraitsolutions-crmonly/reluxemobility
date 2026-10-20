@@ -15,6 +15,8 @@ interface LocationInputProps {
   showError?: boolean;
   /** rank places near this point first, e.g. the pickup city */
   near?: { lat: number; lon: number };
+  /** limit suggestions to city-level places and omit street/address details */
+  cityOnly?: boolean;
   variant?: FieldVariant;
 }
 
@@ -26,6 +28,8 @@ type PhotonFeature = {
     city?: string;
     county?: string;
     state?: string;
+    osm_key?: string;
+    osm_value?: string;
   };
 };
 
@@ -36,6 +40,9 @@ const INDIA_BBOX = "68.1,6.5,97.4,35.7";
 
 const toLabel = ({ properties: p }: PhotonFeature) =>
   [...new Set([p.name, p.street, p.district ?? p.city, p.state].filter(Boolean))].join(", ");
+const toCityLabel = ({ properties: p }: PhotonFeature) => p.name ?? p.city ?? "";
+const isCity = ({ properties: p }: PhotonFeature) =>
+  p.osm_key === "place" && ["city", "town", "village", "municipality"].includes(p.osm_value ?? "");
 
 // Text box with place suggestions. Only a suggestion picked from the dropdown counts as a value,
 // so the trip always carries a real place rather than half-typed text.
@@ -47,6 +54,7 @@ const LocationInput: React.FC<LocationInputProps> = ({
   onChange,
   showError = false,
   near,
+  cityOnly = false,
   variant = "light",
 }) => {
   const listId = useId();
@@ -82,14 +90,15 @@ const LocationInput: React.FC<LocationInputProps> = ({
     setIsOpen(true);
 
     try {
-      const params = new URLSearchParams({ q: text, limit: "6", lang: "en", bbox: INDIA_BBOX });
+      const params = new URLSearchParams({ q: text, limit: cityOnly ? "20" : "6", lang: "en", bbox: INDIA_BBOX });
       if (near) {
         params.set("lat", String(near.lat));
         params.set("lon", String(near.lon));
       }
       const response = await fetch(`${PLACE_SEARCH_URL}?${params}`, { signal: controller.signal });
       const data: { features: PhotonFeature[] } = await response.json();
-      const labels = [...new Set(data.features.map(toLabel).filter(Boolean))];
+      const features = cityOnly ? data.features.filter(isCity) : data.features;
+      const labels = [...new Set(features.map(cityOnly ? toCityLabel : toLabel).filter(Boolean))];
 
       setSuggestions(labels);
       setActiveIndex(labels.length ? 0 : -1);
@@ -171,7 +180,7 @@ const LocationInput: React.FC<LocationInputProps> = ({
 
       {showError && (
         <p id={errorId} className={`mt-1.5 ${errorTextClass}`}>
-          Please select a location from the dropdown
+          {cityOnly ? "Please select a city from the dropdown" : "Please select a location from the dropdown"}
         </p>
       )}
 

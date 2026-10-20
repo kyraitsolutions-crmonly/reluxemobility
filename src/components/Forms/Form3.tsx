@@ -69,7 +69,7 @@ const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
         serviceType: values.serviceType,
         ...(trip && {
           pickupLocation: trip.from,
-          dropLocation: trip.to,
+          ...(trip.to && { dropLocation: trip.to }),
           pickupDate: trip.date,
           pickupTime: trip.time,
         }),
@@ -79,6 +79,15 @@ const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
     if (sent) setValues(emptyValues(serviceTypes));
   };
 
+  const tripDetails = trip
+    ? [
+        { label: "From", value: trip.from },
+        ...(trip.to ? [{ label: "To", value: trip.to }] : []),
+        { label: "Pick Up Date", value: trip.date },
+        { label: "Pick Up Time", value: trip.time },
+      ]
+    : [];
+
   return (
     <div className="w-full rounded-3xl border border-line/60 bg-white p-6 sm:p-8 shadow-[0_20px_50px_rgb(26_55_88/0.08)]">
       <h2 className="mb-6 text-xl font-semibold text-dark">{title}</h2>
@@ -87,12 +96,7 @@ const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
         <div className="mb-6 rounded-2xl border border-line bg-quaternary p-4 sm:p-5">
           <p className="mb-3 text-xs font-semibold uppercase tracking-wider text-secondary">Your Trip</p>
           <dl className="grid grid-cols-1 gap-3 text-sm sm:grid-cols-2">
-            {[
-              ["From", trip.from],
-              ["To", trip.to],
-              ["Pick Up Date", trip.date],
-              ["Pick Up Time", trip.time],
-            ].map(([label, value]) => (
+            {tripDetails.map(({ label, value }) => (
               <div className="min-w-0" key={label}>
                 <dt className="text-xs text-secondary">{label}</dt>
                 <dd className="font-semibold text-dark break-words">{value}</dd>
