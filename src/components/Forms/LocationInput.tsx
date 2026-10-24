@@ -8,14 +8,10 @@ interface LocationInputProps {
   id: string;
   name: string;
   placeholder: string;
-  /** the place picked from the dropdown; empty until the visitor picks one */
   value: string;
   onChange: (value: string) => void;
-  /** show the "select from dropdown" error */
   showError?: boolean;
-  /** rank places near this point first, e.g. the pickup city */
   near?: { lat: number; lon: number };
-  /** limit suggestions to city-level places and omit street/address details */
   cityOnly?: boolean;
   variant?: FieldVariant;
 }
@@ -33,8 +29,6 @@ type PhotonFeature = {
   };
 };
 
-// Photon (OpenStreetMap) search, limited to India. Free and key-less;
-// swap this for Google Places if the site later gets a Maps API key.
 const PLACE_SEARCH_URL = "https://photon.komoot.io/api/";
 const INDIA_BBOX = "68.1,6.5,97.4,35.7";
 
@@ -44,8 +38,6 @@ const toCityLabel = ({ properties: p }: PhotonFeature) => p.name ?? p.city ?? ""
 const isCity = ({ properties: p }: PhotonFeature) =>
   p.osm_key === "place" && ["city", "town", "village", "municipality"].includes(p.osm_value ?? "");
 
-// Text box with place suggestions. Only a suggestion picked from the dropdown counts as a value,
-// so the trip always carries a real place rather than half-typed text.
 const LocationInput: React.FC<LocationInputProps> = ({
   id,
   name,
@@ -67,7 +59,6 @@ const LocationInput: React.FC<LocationInputProps> = ({
   const timerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const requestRef = useRef<AbortController>(undefined);
 
-  // the parent can change the value (swap From/To), so mirror it into the text box
   const [lastValue, setLastValue] = useState(value);
   if (value !== lastValue) {
     setLastValue(value);
@@ -112,7 +103,6 @@ const LocationInput: React.FC<LocationInputProps> = ({
 
   const handleType = (text: string) => {
     setQuery(text);
-    // typing again means the earlier pick no longer matches the text
     if (value) onChange("");
 
     clearTimeout(timerRef.current);
@@ -197,7 +187,6 @@ const LocationInput: React.FC<LocationInputProps> = ({
                 id={`${listId}-${index}`}
                 role="option"
                 aria-selected={index === activeIndex}
-                // mousedown keeps focus in the input so the list does not close before the click lands
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => choose(place)}
                 onMouseEnter={() => setActiveIndex(index)}

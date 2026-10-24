@@ -6,24 +6,18 @@
   --foreground: #1A3758;
 }
 
-/* Brand palette — public/Reluxe_Mobility_Logo/Logo Identity.jpg
-   Midnight Navy #1A3758 · Champagne Beige #E0C7A3 · Warm Ivory #F9F6EF · Pure White #FFFFFF */
 @theme inline {
   --color-primary: #1A3758;
-  /* text: navy for headings/body, navy-tinted slate for secondary copy, muted for hints */
   --color-secondary: #4A5A70;
   --color-muted: #66768B;
-  /* warm ivory-toned borders and dividers */
   --color-line: #E6E0D4;
   --color-line-strong: #D6CEBF;
   --color-tertiary: #F1ECE2;
   --color-quaternary: #F9F6EF;
   --color-dark: #1A3758;
-  /* deepest navy, for dark sections and the dark form fields */
   --color-navy-deep: #0F2238;
   --color-beige: #E0C7A3;
   --color-ivory: #F9F6EF;
-  /* champagne darkened so it stays readable as text and under white button labels on light pages */
   --color-accent: #9C7B4F;
   --color-error: #DC2626;
 }
@@ -81,4 +75,36 @@ body {
 
 .form-datepicker-calendar .react-datepicker__navigation-icon::before {
   border-color: #1a3758;
+}
+
+.form-datepicker-calendar .react-datepicker__input-time-container {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 14px 16px;
+}
+
+.form-datepicker-calendar .react-datepicker-time__caption {
+  color: #1a3758;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.form-datepicker-calendar .react-datepicker-time__input-container .react-datepicker-time__input {
+  margin-left: 0 !important;
+}
+
+.form-datepicker-calendar input.react-datepicker-time__input {
+  background: #f9f6ef;
+  border: 1px solid #d9d1c2;
+  border-radius: 10px;
+  color: #1a3758;
+  font-size: 14px;
+  padding: 8px 10px;
+}
+
+.form-datepicker-calendar input.react-datepicker-time__input:focus {
+  border-color: #1a3758;
+  outline: none;
 }

@@ -1,5 +1,3 @@
-// Shared look for every form field, so all forms on the site match.
-// "light" is used on white cards, "dark" on the dark booking sections.
 
 export type FieldVariant = "light" | "dark";
 
@@ -32,7 +30,6 @@ const base = {
 
 const errorBorder = "border-error focus:border-error";
 
-/** One-line inputs, date pickers and the dropdown trigger */
 export const inputClass = (variant: FieldVariant = "light", hasError = false) =>
   `${base[variant].field} h-12 px-4 ${hasError ? errorBorder : base[variant].border}`;
 
@@ -45,7 +42,6 @@ export const errorTextClass = "text-[11px] text-error";
 
 export const fieldTheme = (variant: FieldVariant = "light") => base[variant];
 
-/** Full-width submit button; pass the colour classes for the form's design */
 export const submitButtonClass = (colorClassName: string) =>
   `h-12 w-full rounded-xl px-6 text-sm font-semibold text-white transition focus-visible:outline-2 focus-visible:outline-offset-2 ${colorClassName}`;
 

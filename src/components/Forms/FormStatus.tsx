@@ -6,7 +6,6 @@ interface FormStatusProps {
   variant?: FieldVariant;
 }
 
-// Success / error line shown under every form's submit button.
 const FormStatus: React.FC<FormStatusProps> = ({ status, error, variant = "light" }) => {
   if (status === "success") {
     return (

@@ -9,7 +9,6 @@ import {
 
 const bookHref = "/contact-us#contact";
 
-// shared across every fleet category page
 export const fleetCategorySharedData = {
   modelShowcase: {
     eyebrow: "Available Models",
@@ -19,7 +18,7 @@ export const fleetCategorySharedData = {
   signatureEvent: {
     title: "Every Journey is",
     highlight: "A Signature Event",
-    image: "/home/psu.png",
+    image: "/im-3.jpg",
     points: [
       "Real-time GPS tracking for guests",
       "Complimentary bottled water & morning newspapers",
@@ -51,12 +50,12 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       highlight: "Compact Collection",
       description:
         "Smart, efficient and always dependable. Our compact sedans deliver the Reluxe standard of service for everyday city commutes and budget-conscious business travel.",
-      image: "/home/hero.jpg",
+      image: "/fleet/6.png",
     },
     card: {
       title: "Compact Sedans",
       tagline: "Smart & Efficient",
-      image: "/home/economy.png",
+      image: "/fleet/cars/dzire.jpg",
     },
     highlights: [
       {
@@ -85,7 +84,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         badge: "Most Booked",
         description:
           "India's favourite compact sedan. A comfortable rear bench, efficient engine and smooth ride make it ideal for daily city travel.",
-        image: "/home/economy.png",
+        image: "/fleet/cars/dzire.jpg",
         specs: [
           { label: "Capacity", value: "4 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Medium", icon: <LuBriefcase /> },
@@ -98,7 +97,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Sanitized after every trip",
           "GPS-tracked with live trip sharing",
         ],
-        bookLabel: "Book Dzire",
         bookHref,
       },
       {
@@ -106,7 +104,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         name: "Honda Amaze",
         description:
           "Refined and roomy for its class, the Amaze pairs Honda reliability with a quiet cabin for relaxed short-distance journeys.",
-        image: "/home/economy.png",
+        image: "/fleet/cars/amaze.jpg",
         specs: [
           { label: "Capacity", value: "4 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Medium", icon: <LuBriefcase /> },
@@ -119,7 +117,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Sanitized after every trip",
           "GPS-tracked with live trip sharing",
         ],
-        bookLabel: "Book Amaze",
         bookHref,
       },
     ],
@@ -140,12 +137,12 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       highlight: "Premium Sedans",
       description:
         "The standard of corporate efficiency and comfort. Spacious, refined sedans that keep executives productive between meetings and airport runs.",
-      image: "/home/hero.jpg",
+      image: "/fleet/12.png",
     },
     card: {
       title: "Premium Sedans",
       tagline: "Everyday Excellence",
-      image: "/home/premium.png",
+      image: "/fleet/cars/city.jpg",
     },
     highlights: [
       {
@@ -174,7 +171,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         badge: "Most Requested",
         description:
           "An executive favourite. The City combines a long wheelbase, premium interiors and a whisper-quiet ride for relaxed business travel.",
-        image: "/home/premium.png",
+        image: "/fleet/cars/city.jpg",
         specs: [
           { label: "Capacity", value: "4 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Large", icon: <LuBriefcase /> },
@@ -187,7 +184,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Complimentary water and newspapers",
           "Flight-tracked airport pickups",
         ],
-        bookLabel: "Book City",
         bookHref,
       },
       {
@@ -195,7 +191,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         name: "Maruti Suzuki Ciaz",
         description:
           "Class-leading rear space and a smooth, efficient drivetrain. The Ciaz is built for long city days and comfortable intercity hops.",
-        image: "/home/premium.png",
+        image: "/fleet/cars/ciaz.jpg",
         specs: [
           { label: "Capacity", value: "4 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Large", icon: <LuBriefcase /> },
@@ -208,7 +204,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Complimentary water and newspapers",
           "GPS-tracked with live trip sharing",
         ],
-        bookLabel: "Book Ciaz",
         bookHref,
       },
     ],
@@ -229,12 +224,12 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       highlight: "Executive SUVs",
       description:
         "Spacious and commanding. Our premium SUVs and MUVs carry teams, families and luggage in comfort — in the city or on the highway.",
-      image: "/home/hero.jpg",
+      image: "/fleet/4.png",
     },
     card: {
       title: "Executive SUVs",
       tagline: "Spacious & Commanding",
-      image: "/home/psu.png",
+      image: "/fleet/4.png",
     },
     highlights: [
       {
@@ -263,7 +258,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         badge: "Most Requested",
         description:
           "The benchmark for premium group travel. Ottoman-style captain seats, a panoramic roof and Toyota's strong-hybrid powertrain.",
-        image: "/home/psu.png",
+        image: "/fleet/cars/innova-hycross.jpg",
         specs: [
           { label: "Capacity", value: "6 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "4 Large", icon: <LuBriefcase /> },
@@ -276,7 +271,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "USB charging in every row",
           "Ideal for outstation and group travel",
         ],
-        bookLabel: "Book Hycross",
         bookHref,
       },
       {
@@ -285,7 +279,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         badge: "Hybrid Available",
         description:
           "Premium comfort for every row. The Invicto offers generous space, a hushed hybrid drive and a feature-rich cabin.",
-        image: "/home/psu.png",
+        image: "/fleet/cars/invicto.jpg",
         specs: [
           { label: "Capacity", value: "6 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "4 Large", icon: <LuBriefcase /> },
@@ -298,7 +292,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "USB charging in every row",
           "GPS-tracked with live trip sharing",
         ],
-        bookLabel: "Book Invicto",
         bookHref,
       },
     ],
@@ -319,12 +312,12 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       highlight: "Green Fleet",
       description:
         "Sustainable luxury without compromise. Silent, zero-emission premium electric SUVs that help your organization travel responsibly.",
-      image: "/home/hero.jpg",
+      image: "/fleet/image_d3a5a536.jpg",
     },
     card: {
       title: "Green Fleet",
       tagline: "Zero-Emission EV",
-      image: "/home/premium.png",
+      image: "/fleet/cars/xev-9e.jpg",
     },
     highlights: [
       {
@@ -353,7 +346,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         badge: "Zero Emission",
         description:
           "Spacious premium electric SUVs with calm, modern cabins and near-silent running — sustainable luxury for full city days and executive travel.",
-        image: "/home/premium.png",
+        image: "/fleet/cars/xev-9e.jpg",
         specs: [
           { label: "Capacity", value: "4 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Large", icon: <LuBriefcase /> },
@@ -366,7 +359,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Charging planned around your itinerary",
           "Supports corporate ESG goals",
         ],
-        bookLabel: "Book an EV",
         bookHref,
       },
     ],
@@ -387,12 +379,12 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       highlight: "Luxury Series",
       description:
         "Uncompromising sophistication for those who demand the finest. Our Luxury Series features flagship sedans from the world's most prestigious automotive houses.",
-      image: "/home/hero.jpg",
+      image: "/fleet/image_60f71a3a.jpg",
     },
     card: {
       title: "Luxury Series",
       tagline: "Flagship Sedans",
-      image: "/home/luxury.png",
+      image: "/fleet/cars/a6.jpg",
     },
     highlights: [
       {
@@ -422,7 +414,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         badge: "Most Requested",
         description:
           "The undisputed benchmark of luxury mobility. A whisper-quiet rear cabin, premium leather seating and effortless ride comfort for corporate heads and VIP guests.",
-        image: "/home/luxury.png",
+        image: "/fleet/cars/e-class.jpg",
         specs: [
           { label: "Capacity", value: "3 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Large + 1 Small", icon: <LuBriefcase /> },
@@ -435,7 +427,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Complimentary refreshments",
           "Security-trained, uniformed chauffeur",
         ],
-        bookLabel: "Book Mercedes-Benz",
         bookHref,
       },
       {
@@ -444,7 +435,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         code: "Executive Luxury",
         description:
           "A masterclass in technological luxury. A dynamic yet serene environment, perfect for the executive who values modern design and connectivity.",
-        image: "/home/luxury.png",
+        image: "/fleet/cars/5-series.jpg",
         specs: [
           { label: "Capacity", value: "3 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Large + 1 Small", icon: <LuBriefcase /> },
@@ -457,7 +448,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Complimentary refreshments",
           "Security-trained, uniformed chauffeur",
         ],
-        bookLabel: "Book BMW",
         bookHref,
       },
       {
@@ -466,7 +456,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         code: "Luxury Sedan",
         description:
           "Understated, progressive luxury. A calm, beautifully finished cabin and composed ride for discreet executive and VIP travel.",
-        image: "/home/luxury.png",
+        image: "/fleet/cars/a6.jpg",
         specs: [
           { label: "Capacity", value: "3 Passengers", icon: <LuUsers /> },
           { label: "Luggage", value: "2 Large + 1 Small", icon: <LuBriefcase /> },
@@ -479,7 +469,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Complimentary refreshments",
           "Security-trained, uniformed chauffeur",
         ],
-        bookLabel: "Book Audi",
         bookHref,
       },
     ],

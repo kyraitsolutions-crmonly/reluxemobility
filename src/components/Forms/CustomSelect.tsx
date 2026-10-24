@@ -5,25 +5,19 @@ import { FiCheck, FiChevronDown } from "react-icons/fi";
 import { FieldVariant, fieldTheme, inputClass } from "./formStyles";
 
 interface CustomSelectProps {
-  /** id of the trigger button, so a <label htmlFor> can point at it */
   id: string;
-  /** form field name; the value is submitted through a hidden input */
   name: string;
   options: string[];
   placeholder: string;
-  /** controlled value; leave undefined to let the dropdown manage its own value */
   value?: string;
   defaultValue?: string;
   onChange?: (value: string) => void;
   required?: boolean;
   hasError?: boolean;
-  /** called when the browser blocks submit because nothing is selected */
   onInvalid?: () => void;
   variant?: FieldVariant;
 }
 
-// Styled dropdown shared by every form, with full keyboard support
-// (arrows, Home/End, Enter/Space, Escape, type-to-search).
 const CustomSelect: React.FC<CustomSelectProps> = ({
   id,
   name,
@@ -90,7 +84,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         setIsOpen(false);
         return;
       default:
-        // jump to the first option starting with the typed letter
         if (event.key.length === 1) {
           const match = options.findIndex((option) =>
             option.toLowerCase().startsWith(event.key.toLowerCase())
@@ -110,7 +103,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
         if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setIsOpen(false);
       }}
     >
-      {/* carries the value into the form and lets the browser enforce `required` */}
       <input
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 opacity-0"
@@ -164,7 +156,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
                 id={`${listId}-${index}`}
                 role="option"
                 aria-selected={isSelected}
-                // mousedown keeps focus on the trigger so the menu does not close before the click lands
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => choose(option)}
                 onMouseEnter={() => setActiveIndex(index)}

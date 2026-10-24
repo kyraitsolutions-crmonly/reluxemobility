@@ -1,3 +1,5 @@
+import { contact } from "@/utils/constent";
+import { LuMapPin } from "react-icons/lu";
 import { JSX } from "react/jsx-runtime";
 
 export const MailIcon = () => (
@@ -114,24 +116,25 @@ export const WebsiteFooterLinks: FooterLinks = {
           label: "Outstation Travel",
           href: "/services/outstation-travel",
         },
-        // {
-        //   label: "Corporate & PSU Velvet Service",
-        //   href: "/services/corporate-psu",
-        // },
       ],
     },
     {
       title: "Contact",
       links: [
-        {
-          label: "Phone details to be confirmed",
-          href: "#",
+        ...contact.phone.map((phone) => ({
+          label: phone,
+          href: contact.callCta,
           icon: <CallIcon />,
+        })),
+        {
+          label: contact.email,
+          href: contact.emailCta,
+          icon: <MailIcon />,
         },
         {
-          label: "Email details to be confirmed",
-          href: "#",
-          icon: <MailIcon />,
+          label: contact.address,
+          href: contact.addressLink,
+          icon: <LuMapPin className="text-[#E0C7A3]" />,
         },
       ],
     },

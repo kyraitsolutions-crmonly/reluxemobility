@@ -41,17 +41,18 @@ export const MarqueeCard: React.FC<MarqueeCollectionProps["vehicles"][0]> = ({
   button,
 }) => {
   return (
-    <div className="relative flex aspect-4/5 sm:aspect-4/3.5 items-end overflow-hidden rounded-3xl bg-dark text-white">
-      <Image
-        src={image}
-        alt={name}
-        fill
-        sizes="(min-width: 768px) 50vw, 100vw"
-        className="object-cover"
-      />
-      <div className="absolute inset-0 bg-linear-to-t from-dark via-dark/60 to-transparent" />
+    <div className="flex flex-col overflow-hidden rounded-3xl bg-dark text-white">
+      <div className="relative aspect-16/9 bg-quaternary">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-contain p-6 mix-blend-multiply"
+        />
+      </div>
 
-      <div className="relative space-y-5 p-6 md:p-8">
+      <div className="relative flex-1 space-y-5 p-6 md:p-8">
         <div className="space-y-1">
           <p className="text-[10px] font-semibold uppercase tracking-wider text-white/70">
             {category}

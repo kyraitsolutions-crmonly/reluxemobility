@@ -38,7 +38,7 @@ export const servicesPageData = {
           label: "Learn More",
           href: "/services/hourly-rental",
         },
-        image: "/home/premium.png",
+        image: "/fleet/cars/city.jpg",
       },
       {
         id: "airport-transfers",
@@ -55,7 +55,7 @@ export const servicesPageData = {
           label: "Book Transfer",
           href: "/services/airport-transfers",
         },
-        image: "/home/luxury.png",
+        image: "/fleet/cars/e-class.jpg",
       },
       {
         id: "outstation-travel",
@@ -72,7 +72,7 @@ export const servicesPageData = {
           label: "Plan Intercity Trip",
           href: "/services/outstation-travel",
         },
-        image: "/home/economy.png",
+        image: "/fleet/cars/innova-hycross.jpg",
       },
       {
         id: "corporate-psu",

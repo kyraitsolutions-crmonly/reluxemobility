@@ -1,6 +1,5 @@
 "use client";
 
-// import { useWebContext } from "@/context-api/WebContext";
 import Link from "next/link";
 interface LinkButtonProps {
   href: string;
@@ -11,7 +10,6 @@ interface LinkButtonProps {
   callIcon?: boolean;
   calendarIcon?: boolean;
   arrowIcon?: boolean;
-  /** Villa name to pre-select in the enquiry form (used only when href === "#form") */
   [key: string]: unknown;
 }
 
@@ -26,35 +24,10 @@ const LinkButton: React.FC<LinkButtonProps> = ({
   calendarIcon = false,
   ...props
 }) => {
-  // const { isOpen } = useWebContext();
 
-  // const handleClick = () => {
-  //   if (isOpen) {
-  //     return;
-  //   }
-  // };
 
   return (
     <>
-      {/* {href === "#form" ? (
-        <button
-          onClick={handleClick}
-          className={`flex items-center gap-2 shadow-md border w-fit px-4 py-2 hover:scale-95 transition-all duration-300 ease-in-out hover:scale-x-105 active:scale-95 ${className}`}
-          {...props}
-        >
-          {whatsAppIcon && <WhatsAppIcon />}
-          {callIcon && <CallIcon />}
-          {calendarIcon && <CalendarIcon />}
-          <span className={`${labelClass}`}> {label}</span>
-
-          {arrowIcon && (
-            <span>
-              <ArrowIcon />
-            </span>
-          )}
-
-        </button>
-      ) : ( */}
         <Link
           href={href}
           className={`flex items-center font-medium tracking-widest gap-1 border w-fit px-4 py-2 hover:scale-95 transition-all duration-300 ease-in-out hover:scale-x-105 active:scale-95 ${className}`}
@@ -71,9 +44,7 @@ const LinkButton: React.FC<LinkButtonProps> = ({
             </span>
           )}
 
-          {/* {getDirectionIcon && <GetDirections />}  */}
         </Link>
-      {/* )} */}
     </>
   );
 };

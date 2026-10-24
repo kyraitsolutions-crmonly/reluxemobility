@@ -15,7 +15,6 @@ const ModelCard: React.FC<FleetModel> = ({
   specs,
   tags,
   specifications,
-  bookLabel,
   bookHref,
 }) => {
   const specificationsId = useId();
@@ -23,13 +22,13 @@ const ModelCard: React.FC<FleetModel> = ({
 
   return (
     <div className="flex h-full flex-col rounded-3xl border border-line bg-white p-5 md:p-7 shadow-sm">
-      <div className="relative aspect-16/9">
+      <div className="relative aspect-video">
         <Image
           src={image}
           alt={name}
           fill
           sizes="(min-width: 768px) 50vw, 100vw"
-          className="object-contain"
+          className="object-cover mix-blend-multiply"
         />
         {badge && (
           <span className="absolute right-0 top-0 text-[10px] font-semibold uppercase tracking-wider text-accent">
@@ -41,7 +40,9 @@ const ModelCard: React.FC<FleetModel> = ({
       <div className="mt-6 flex flex-1 flex-col gap-5">
         <div className="space-y-2">
           <div className="flex items-baseline justify-between gap-3">
-            <h3 className="text-xl md:text-2xl font-semibold text-dark">{name}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-dark">
+              {name} <span className="text-sm font-normal italic text-secondary">or similar</span>
+            </h3>
             {code && <span className="shrink-0 text-sm italic text-accent">{code}</span>}
           </div>
           <p className="text-sm text-secondary">{description}</p>
@@ -86,7 +87,7 @@ const ModelCard: React.FC<FleetModel> = ({
         <div className="mt-auto grid grid-cols-[1fr_auto] gap-3">
           <LinkButton
             href={bookHref}
-            label={bookLabel}
+            label="Book Now"
             className="w-full justify-center rounded-lg border-dark bg-dark text-xs uppercase text-white"
           />
           <button

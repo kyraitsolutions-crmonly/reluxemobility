@@ -1,10 +1,12 @@
 "use client";
 
+import { contact } from "@/utils/constent";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
+import { LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 import { MdClose } from "react-icons/md";
 import LinkButton from "../buttons/LinkButton";
 import { isActiveLink, isPageLink, NavLink } from "./navlink";
@@ -23,7 +25,6 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
     onClose();
   };
 
-  // lock page scroll and allow Escape to close while the menu is open
   useEffect(() => {
     if (!isOpen) return;
 
@@ -40,7 +41,6 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
     };
   }, [isOpen, onClose]);
 
-  // href "#" hides a page: with sub pages it keeps its submenu, without them it is removed
   const pageLinks = NavLink.links
     .slice(0, NavLink.links.length - 1)
     .filter((link) => link.subLinks || isPageLink(link.href));
@@ -48,7 +48,6 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
 
   return (
     <div className="lg:hidden">
-      {/* backdrop */}
       <div
         aria-hidden="true"
         onClick={closeNavigation}
@@ -127,7 +126,6 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
                     >
                       <ul className="overflow-hidden">
                         {[
-                          // "All Services" / "All Fleet" only while that page is not hidden with href "#"
                           ...(isPageLink(link.href) ? [{ label: `All ${link.label}`, href: link.href }] : []),
                           ...link.subLinks,
                         ].map(
@@ -161,7 +159,30 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
           })}
         </ul>
 
-        <div className="border-t border-line p-4">
+        <div className="flex flex-col gap-3 border-t border-line p-4">
+          <div className="flex flex-col gap-2 px-1 text-sm text-secondary">
+            <a href={contact.emailCta} className="flex items-center gap-2 hover:text-dark">
+              <LuMail aria-hidden="true" className="size-4 shrink-0" />
+              {contact.email}
+            </a>
+            <a
+              href={contact.addressLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-dark"
+            >
+              <LuMapPin aria-hidden="true" className="size-4 shrink-0" />
+              {contact.address}
+            </a>
+          </div>
+          <a
+            href={contact.callCta}
+            onClick={closeNavigation}
+            className="flex items-center justify-center gap-2 rounded-xl border border-line py-3 text-sm font-semibold text-dark transition-colors hover:bg-quaternary"
+          >
+            <LuPhone aria-hidden="true" className="size-4" />
+            Call {contact.phone[0]}
+          </a>
           <LinkButton
             href={bookNow.href}
             label={bookNow.label}

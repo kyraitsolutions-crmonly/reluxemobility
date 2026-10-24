@@ -40,7 +40,6 @@ export interface BookingProcessProps {
   }[];
 }
 
-/* ---------- service detail page (/services/[slug]) ---------- */
 
 export interface ServiceOverviewProps {
   title: string;
@@ -115,7 +114,6 @@ export interface ServiceDetailData {
     description: string;
     image: string;
   };
-  /** Used for the "Other Mobility Solutions" cards on other service pages */
   card: {
     title: string;
     description: string;

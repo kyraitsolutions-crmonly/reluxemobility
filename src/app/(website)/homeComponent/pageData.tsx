@@ -8,6 +8,8 @@ import {
   MailIcon,
   TickIcon,
 } from "@/utils/icons";
+import { contact } from "@/utils/constent";
+import { LuMapPin } from "react-icons/lu";
 
 export const homePageData = {
   hero: {
@@ -148,7 +150,7 @@ export const homePageData = {
         tier: "Premium",
         description:
           "Honda City, Maruti Suzuki Ciaz — the standard of corporate efficiency and comfort.",
-        image: "/home/premium.png",
+        image: "/fleet/cars/innova-hycross.jpg",
       },
       {
         id: "luxury",
@@ -157,7 +159,7 @@ export const homePageData = {
         tier: "Luxury",
         description:
           "Mercedes-Benz, BMW, Audi — first-class experience with signature chauffeur service.",
-        image: "/home/luxury.png",
+        image: "/fleet/cars/e-class.jpg",
       },
       {
         id: "economy",
@@ -166,7 +168,7 @@ export const homePageData = {
         tier: "Economy",
         description:
           "Maruti Suzuki Dzire, Honda Amaze — reliable and cost-effective daily travel solutions.",
-        image: "/home/economy.png",
+        image: "/fleet/cars/dzire.jpg",
       },
     ],
   },
@@ -217,14 +219,6 @@ export const homePageData = {
       },
       { id: "sai", name: "SAI", logo: "/logos/sai.png" },
       { id: "mca", name: "MCA", logo: "/logos/mca.png" },
-      // { id: "dpe", name: "DPE" },
-      // { id: "msde", name: "MSDE" },
-      // { id: "acs-revenue", name: "ACS-REVENUE" },
-      // { id: "sez", name: "SEZ" },
-      // { id: "cbdt", name: "CBDT" },
-      // { id: "gad", name: "GAD" },
-      // { id: "sspl", name: "SSPL" },
-      //  { id: "pfa", name: "PFA" },
       { id: "stpi", name: "STPI", logo: "/logos/stpi.jpeg" },
       { id: "rdso", name: "RDSO", logo: "/logos/rdso.png" },
       { id: "nsdc", name: "NSDC", logo: "/logos/nsdc.png" },
@@ -262,15 +256,20 @@ export const homePageData = {
       "We are committed to creating unparalleled experiences for retail and corporate clients. Book your premium journey today.",
 
     contactDetails: [
-      {
-        label: "Contact details to be confirmed",
-        href: "#",
+      ...contact.phone.map((phone) => ({
+        label: phone,
+        href: contact.callCta,
         icon: <CallIcon />,
+      })),
+      {
+        label: contact.email,
+        href: contact.emailCta,
+        icon: <MailIcon />,
       },
       {
-        label: "Contact details to be confirmed",
-        href: "#",
-        icon: <MailIcon />,
+        label: contact.address,
+        href: contact.addressLink,
+        icon: <LuMapPin className="text-[#E0C7A3]" />,
       },
     ],
   },

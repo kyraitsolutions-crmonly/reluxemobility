@@ -1,9 +1,11 @@
 "use client";
+import { contact } from "@/utils/constent";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BiChevronDown, BiMenu } from "react-icons/bi";
+import { LuPhone } from "react-icons/lu";
 import LinkButton from "../buttons/LinkButton";
 import { Container } from "../sectionComponants";
 import MobileNav from "./MobileNav";
@@ -16,7 +18,6 @@ const WebsiteNav = () => {
     setIsOpenNav((isOpen) => !isOpen);
   };
 
-  // href "#" hides a page: with sub pages it keeps its dropdown, without them it is removed
   const pageLinks = NavLink.links
     .slice(0, NavLink.links.length - 1)
     .filter((link) => link.subLinks || isPageLink(link.href));
@@ -25,10 +26,8 @@ const WebsiteNav = () => {
   return (
     <>
       <header className="sticky top-0 z-40 w-full border-b border-line bg-white/95 backdrop-blur-md">
-        {/* logo and page links */}
         <nav className="max_screen_width">
           <Container className="flex items-center justify-between py-3">
-            {/* logo */}
             <Link
               href="/"
               className="relative block lg:w-44 w-36 aspect-[3.95/1]"
@@ -42,7 +41,6 @@ const WebsiteNav = () => {
                 alt="Reluxe Mobility"
               />
             </Link>
-            {/* page links */}
             <ul className="flex max-lg:hidden items-center justify-center gap-8">
               {pageLinks.map((link, index) => {
                 const isActive =
@@ -70,7 +68,6 @@ const WebsiteNav = () => {
                 return (
                   <li key={index} className="group relative">
                     {!isPageLink(link.href) ? (
-                      // href "#": the page itself is hidden, so the label only opens the dropdown
                       <button
                         type="button"
                         className={triggerClassName}
@@ -90,7 +87,6 @@ const WebsiteNav = () => {
                     )}
 
                     {link.subLinks && (
-                      // the padded wrapper bridges the gap so the menu stays open while the pointer moves down
                       <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 translate-y-1 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
                         <ul
                           className="w-60 rounded-xl border border-line bg-white p-2 shadow-xl"
@@ -116,25 +112,35 @@ const WebsiteNav = () => {
                 );
               })}
             </ul>
-            {/* button book-now */}
-            <LinkButton
-              href={bookNow.href}
-              label={bookNow.label}
-              className="text-sm text-white bg-dark border-dark rounded-xl tracking-normal! px-5 py-2.5 max-lg:hidden"
-            />
-            {/* nav menu */}
-            <button
-              type="button"
-              onClick={openNav}
-              aria-label={
-                isOpenNav ? "Close mobile navigation" : "Open mobile navigation"
-              }
-              aria-expanded={isOpenNav}
-              aria-controls="mobile-navigation"
-              className="lg:hidden rounded-lg p-1 text-dark hover:bg-tertiary"
-            >
-              <BiMenu className="h-7 w-7" />
-            </button>
+            <div className="flex items-center gap-4 lg:gap-6">
+              <a
+                href={contact.callCta}
+                aria-label={`Call ${contact.phone[0]}`}
+                className="flex items-center gap-2 text-sm font-semibold text-dark transition-colors hover:text-secondary max-md:hidden"
+              >
+                <span className="flex size-8 items-center justify-center rounded-full bg-tertiary">
+                  <LuPhone aria-hidden="true" className="size-4" />
+                </span>
+                <span className="lg:max-xl:hidden">{contact.phone[0]}</span>
+              </a>
+              <LinkButton
+                href={bookNow.href}
+                label={bookNow.label}
+                className="text-sm text-white bg-dark border-dark rounded-xl tracking-normal! px-5 py-2.5 max-lg:hidden"
+              />
+              <button
+                type="button"
+                onClick={openNav}
+                aria-label={
+                  isOpenNav ? "Close mobile navigation" : "Open mobile navigation"
+                }
+                aria-expanded={isOpenNav}
+                aria-controls="mobile-navigation"
+                className="lg:hidden rounded-lg p-1 text-dark hover:bg-tertiary"
+              >
+                <BiMenu className="h-7 w-7" />
+              </button>
+            </div>
           </Container>
         </nav>
       </header>

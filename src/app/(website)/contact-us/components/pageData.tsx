@@ -1,3 +1,4 @@
+import { contact } from "@/utils/constent";
 import { LuMail, LuMapPin, LuPhone } from "react-icons/lu";
 
 export const contactUsPageData = {
@@ -6,7 +7,7 @@ export const contactUsPageData = {
     title: "Get in Touch",
     description:
       "Our dedicated team can assist with premium chauffeur services and corporate mobility requirements.",
-    image: "/home/hero.jpg",
+    image: "/Container-1.png",
   },
 
   contactSection: {
@@ -19,19 +20,22 @@ export const contactUsPageData = {
         {
           id: "headquarters",
           title: "Our Headquarters",
-          description: "Address to be confirmed",
+          description: contact.address,
+          href: contact.addressLink,
           icon: <LuMapPin />,
         },
         {
           id: "real-time-support",
           title: "Real-Time Support",
-          description: "Phone details to be confirmed",
+          description: contact.phone.join(", "),
+          href: contact.callCta,
           icon: <LuPhone />,
         },
         {
           id: "email-correspondence",
           title: "Email Correspondence",
-          description: "Email details to be confirmed",
+          description: contact.email,
+          href: contact.emailCta,
           icon: <LuMail />,
         },
       ],
@@ -46,21 +50,15 @@ export const contactUsPageData = {
 
     enquiryForm: {
       title: "Send an Enquiry",
-      serviceTypes: [
-        "Corporate & PSU Velvet Service",
-        "Hourly / City Rental",
-        "Airport Transfers",
-        "Outstation Travel",
-        "Other",
-      ],
     },
   },
 
   locationSection: {
     title: "Reluxe HQ",
     description: "Interactive Location Map",
-    address: "Address to be confirmed",
-    mapEmbedUrl: "",
+    address: contact.address,
+    addressLink: contact.addressLink,
+    mapEmbedUrl: contact.mapEmbedUrl,
   },
 
   faqSection: {

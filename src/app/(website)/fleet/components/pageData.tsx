@@ -25,7 +25,7 @@ export const fleetPageData = {
   fleetShowcase: {
     id: "fleet-showcase",
     allLabel: "All Vehicles",
-    ctaLabel: "Choose This Ride",
+    ctaLabel: "Book Now",
     ctaHref: bookingHref,
 
     categories: [
@@ -39,7 +39,7 @@ export const fleetPageData = {
             id: "maruti-dzire",
             name: "Maruti Suzuki Dzire",
             type: "Compact Sedan",
-            image: "/home/economy.png",
+            image: "/fleet/cars/dzire.jpg",
             features: [
               { label: "4 Passengers", icon: <LuUsers /> },
               { label: "2 Bags", icon: <LuBriefcase /> },
@@ -51,7 +51,7 @@ export const fleetPageData = {
             id: "honda-amaze",
             name: "Honda Amaze",
             type: "Compact Sedan",
-            image: "/home/economy.png",
+            image: "/fleet/cars/amaze.jpg",
             features: [
               { label: "4 Passengers", icon: <LuUsers /> },
               { label: "2 Bags", icon: <LuBriefcase /> },
@@ -72,7 +72,7 @@ export const fleetPageData = {
             name: "Honda City",
             type: "Premium Sedan",
             badge: "Popular",
-            image: "/home/premium.png",
+            image: "/fleet/cars/city.jpg",
             features: [
               { label: "4 Passengers", icon: <LuUsers /> },
               { label: "2 Large Bags", icon: <LuBriefcase /> },
@@ -84,7 +84,7 @@ export const fleetPageData = {
             id: "maruti-ciaz",
             name: "Maruti Suzuki Ciaz",
             type: "Executive Sedan",
-            image: "/home/premium.png",
+            image: "/fleet/cars/ciaz.jpg",
             features: [
               { label: "4 Passengers", icon: <LuUsers /> },
               { label: "2 Large Bags", icon: <LuBriefcase /> },
@@ -105,7 +105,7 @@ export const fleetPageData = {
             name: "Toyota Innova Hycross",
             type: "Premium MUV",
             badge: "Spacious",
-            image: "/home/premium.png",
+            image: "/fleet/cars/innova-hycross.jpg",
             features: [
               { label: "6 Passengers", icon: <LuUsers /> },
               { label: "4 Large Bags", icon: <LuBriefcase /> },
@@ -117,7 +117,7 @@ export const fleetPageData = {
             id: "maruti-invicto",
             name: "Maruti Suzuki Invicto",
             type: "Premium MUV",
-            image: "/home/premium.png",
+            image: "/fleet/cars/invicto.jpg",
             features: [
               { label: "6 Passengers", icon: <LuUsers /> },
               { label: "4 Large Bags", icon: <LuBriefcase /> },
@@ -138,7 +138,7 @@ export const fleetPageData = {
             name: "Premium Electric SUV",
             type: "Zero-Emission EV",
             badge: "Zero Emission",
-            image: "/home/premium.png",
+            image: "/fleet/cars/xev-9e.jpg",
             features: [
               { label: "4 Passengers", icon: <LuUsers /> },
               { label: "2 Large Bags", icon: <LuBriefcase /> },
@@ -159,7 +159,7 @@ export const fleetPageData = {
             name: "Mercedes-Benz",
             type: "Luxury Sedan",
             badge: "Most Requested",
-            image: "/home/luxury.png",
+            image: "/fleet/cars/e-class.jpg",
             features: [
               { label: "3 Passengers", icon: <LuUsers /> },
               { label: "2 Large Bags", icon: <LuBriefcase /> },
@@ -171,7 +171,7 @@ export const fleetPageData = {
             id: "bmw",
             name: "BMW",
             type: "Executive Luxury",
-            image: "/home/luxury.png",
+            image: "/fleet/cars/5-series.jpg",
             features: [
               { label: "3 Passengers", icon: <LuUsers /> },
               { label: "2 Large Bags", icon: <LuBriefcase /> },
@@ -183,7 +183,7 @@ export const fleetPageData = {
             id: "audi",
             name: "Audi",
             type: "Luxury Sedan",
-            image: "/home/luxury.png",
+            image: "/fleet/cars/a6.jpg",
             features: [
               { label: "3 Passengers", icon: <LuUsers /> },
               { label: "2 Large Bags", icon: <LuBriefcase /> },
@@ -230,7 +230,7 @@ export const fleetPageData = {
         id: "mercedes-benz",
         category: "Luxury Sedan",
         name: "Mercedes-Benz",
-        image: "/home/psu.png",
+        image: "/fleet/cars/e-class.jpg",
         highlights: [
           { value: "Velvet", label: "Service Tier" },
           { value: "Premium", label: "Leather Interiors" },
@@ -245,7 +245,7 @@ export const fleetPageData = {
         id: "bmw",
         category: "Executive Luxury",
         name: "BMW",
-        image: "/home/hero.jpg",
+        image: "/fleet/cars/5-series.jpg",
         highlights: [
           { value: "Executive", label: "Concierge" },
           { value: "Privacy", label: "Tinted Glass" },

@@ -3,16 +3,21 @@
 import { InquiryFormProps } from "@/@types/servicesPageType";
 import { useId, useState, type FormEvent } from "react";
 import CustomSelect from "./CustomSelect";
-import { accentSubmit, inputClass, labelClass, submitButtonClass } from "./formStyles";
+import { DateInput } from "./DateTimeInputs";
+import { accentSubmit, errorTextClass, inputClass, labelClass, submitButtonClass } from "./formStyles";
 
-// Dark inquiry form used on the service detail pages.
 const Form4: React.FC<InquiryFormProps> = ({ vehicleClasses, durations, submitLabel }) => {
   const id = useId();
   const [submitted, setSubmitted] = useState(false);
+  const [pickupDate, setPickupDate] = useState<Date | null>(null);
+  const [showDateError, setShowDateError] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Connect your enquiry API here to send the values to your backend.
+    if (!pickupDate) {
+      setShowDateError(true);
+      return;
+    }
     setSubmitted(true);
   };
 
@@ -57,7 +62,19 @@ const Form4: React.FC<InquiryFormProps> = ({ vehicleClasses, durations, submitLa
           <label className={labelClass("dark")} htmlFor={`${id}-date`}>
             Pickup Date
           </label>
-          <input className={inputClass("dark")} id={`${id}-date`} name="pickupDate" type="date" required />
+          <DateInput
+            id={`${id}-date`}
+            name="pickupDate"
+            value={pickupDate}
+            onChange={(date) => {
+              setPickupDate(date);
+              setSubmitted(false);
+              if (date) setShowDateError(false);
+            }}
+            hasError={showDateError}
+            variant="dark"
+          />
+          {showDateError && <p className={errorTextClass}>Please choose a pickup date</p>}
         </div>
         <div className="flex min-w-0 flex-col gap-2">
           <label className={labelClass("dark")} htmlFor={`${id}-package`}>

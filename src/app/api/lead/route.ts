@@ -1,7 +1,5 @@
 import { LeadPayload } from "@/@types/leadType";
 
-// Forwards form leads to the CRM webhook. The token stays on the server,
-// so it is never exposed in the browser bundle.
 export async function POST(request: Request) {
   const url = process.env.LEAD_WEBHOOK_URL;
   const token = process.env.webhook_3607ce32eb;

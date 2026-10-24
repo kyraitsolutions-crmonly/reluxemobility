@@ -22,7 +22,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// the categories that follow this one (wrapping around), so every page links to the rest of the fleet
 function getOtherCategories(slug: string, count = 3) {
   const index = fleetCategoryPageData.findIndex((c) => c.slug === slug);
 

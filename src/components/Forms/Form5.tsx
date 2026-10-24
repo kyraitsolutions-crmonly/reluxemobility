@@ -24,7 +24,6 @@ const textFields: TextField[] = [
   { name: "phone", label: "Phone Number", placeholder: "10-digit mobile number", type: "tel", autoComplete: "tel", pattern: "[6-9][0-9]{9}", error: "Please enter a valid 10-digit phone number." },
 ];
 
-// Corporate account enquiry form used on the corporate car rental page.
 const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessVolumes, submitLabel }) => {
   const id = useId();
   const [errors, setErrors] = useState<Partial<Record<FieldName, boolean>>>({});
@@ -33,13 +32,11 @@ const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessV
   const setError = (name: string, hasError: boolean) =>
     setErrors((current) => ({ ...current, [name]: hasError }));
 
-  // show a field's error only after the visitor has left it (or tried to submit)
   const checkField = (event: FocusEvent<HTMLInputElement>) =>
     setError(event.currentTarget.name, !event.currentTarget.validity.valid);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Connect your enquiry API here to send the values to your backend.
     setSubmitted(true);
   };
 

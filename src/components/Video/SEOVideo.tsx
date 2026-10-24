@@ -32,9 +32,8 @@ const SEOVideo: React.FC<SEOVideoProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  /* ---------------- Intersection Observer ---------------- */
   useEffect(() => {
-    if (!pauseOnScroll) return; // ✅ no state update
+    if (!pauseOnScroll) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -47,7 +46,6 @@ const SEOVideo: React.FC<SEOVideoProps> = ({
     return () => observer.disconnect();
   }, [pauseOnScroll, threshold]);
 
-  /* ---------------- Play / Pause + Unload ---------------- */
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;

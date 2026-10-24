@@ -1,29 +1,27 @@
+
 export const enCodeText = encodeURIComponent(`Hi Reluxe Mobility Team,
-
-I'm interested in booking a chauffeur-driven ride.
-
+I'm interested in booking a ride.
 Please share the available vehicles and rates.
-
 Thank you!`);
 
 
 export const contact = {
-  email: "", // to be confirmed
-  mapUrl: "",
-  phone: ["+91 12345 12345"],
-  address: "", // to be confirmed
-  addressLink: "",
+  email: "",
+  emailCta: "mailto:",
+  mapUrl: "https://maps.app.goo.gl/FUfF1dN6bTZ64yhJ6",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3330.5720333343506!2d77.19264107549854!3d28.571435975698183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM0JzE3LjIiTiA3N8KwMTEnNDIuOCJF!5e1!3m2!1sen!2sin!4v1792857028282!5m2!1sen!2sin",
+  phone: ["+91 70005 70028"],
+  address: "",
+  addressLink: "https://maps.app.goo.gl/FUfF1dN6bTZ64yhJ6",
   socialMedia: {
-    facebook: "https://www.facebook.com",
-    instagram: "https://www.instagram.com/",
+    facebook: "https://www.facebook.com/share/1EuxQ336kZ/",
+    instagram: "https://www.instagram.com/reluxemobility",
   },
-  callCta: `tel:+911234512345`,
-  WhatsappCta: `https://wa.me/+911234512345?text=${enCodeText}`,
-  // formDomain: "",
-  formDomain: "testmulti", //for testing
-  formHid: "",
-  // formHid: "",
+  callCta: `tel:+917000570028`,
+  WhatsappCta: `https://wa.me/917000570028?text=${enCodeText}`,
+ 
 };
+
 
 interface data_Type {
   name: string;

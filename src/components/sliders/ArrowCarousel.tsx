@@ -6,17 +6,12 @@ import type { Swiper as SwiperInstance } from "swiper";
 import SwiperCarousel from "./SwiperCarousel";
 
 interface ArrowCarouselProps {
-  /** Heading block shown to the left of the arrows */
   header: ReactNode;
   slides: ReactNode[];
-  /** Use a dark background behind the arrow buttons */
   dark?: boolean;
-  /** Slides visible on large screens */
   perView?: 2 | 3;
 }
 
-// Slides and header are rendered on the server and passed in as elements,
-// so only the slider itself ships as client code.
 const ArrowCarousel: React.FC<ArrowCarouselProps> = ({
   header,
   slides,

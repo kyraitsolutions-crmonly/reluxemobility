@@ -18,7 +18,7 @@ export const aboutUsPageData = {
       },
     ],
 
-    image: "/home/hero.jpg",
+    image: "/fleet/10.png",
   },
 
   storySection: {
@@ -27,12 +27,12 @@ export const aboutUsPageData = {
     title: "Elevating Expectations Through Innovation and Care",
 
     paragraphs: [
-      "Founded on the principle that mobility should be more than just transportation, Reluxe Mobility was established to bridge the gap between efficiency and luxury. We recognized a need for a service that prioritizes the passenger's peace of mind as much as their destination.",
+      "Founded on the principle that mobility should be more than just transportation, Reluxe Mobility was established to redefine premium chauffeur-driven travel through innovation, comfort, and personalized care. With the support and experience of Khaira Tourist Services, Reluxe Mobility bridges the gap between efficiency and luxury, delivering a refined travel experience that prioritizes every passenger’s comfort, safety, and peace of mind.",
 
-      'Our mission is to provide an unmatched "Velvet Experience" — a fusion of state-of-the-art fleet management, highly trained professionals, and a customer-centric approach that ensures every journey is as memorable as it is safe.',
+      'Our mission is to provide an unmatched “Velvet Experience” — a seamless fusion of a premium fleet, highly trained professionals, efficient fleet management, and a customer-first approach. At Reluxe Mobility, we believe every journey should reflect sophistication, reliability, and exceptional service, ensuring that each ride is as memorable as the destination itself.',
     ],
 
-    image: "/home/psu.png",
+    image: "/im-4.jpg",
 
     statistics: [
       {
@@ -85,7 +85,7 @@ export const aboutUsPageData = {
     description:
       "Our signature \"Velvet Service\" isn't just a name — it's a meticulously engineered protocol for excellence. We've set the benchmark for white-glove corporate mobility.",
 
-    image: "/home/hero.jpg",
+    image: "/im-10.jpg",
 
     features: [
       {
@@ -128,14 +128,6 @@ export const aboutUsPageData = {
       },
       { id: "sai", name: "SAI", logo: "/logos/sai.png" },
       { id: "mca", name: "MCA", logo: "/logos/mca.png" },
-      // { id: "dpe", name: "DPE" },
-      // { id: "msde", name: "MSDE" },
-      // { id: "acs-revenue", name: "ACS-REVENUE" },
-      // { id: "sez", name: "SEZ" },
-      // { id: "cbdt", name: "CBDT" },
-      // { id: "gad", name: "GAD" },
-      // { id: "sspl", name: "SSPL" },
-      //  { id: "pfa", name: "PFA" },
       { id: "stpi", name: "STPI", logo: "/logos/stpi.jpeg" },
       { id: "rdso", name: "RDSO", logo: "/logos/rdso.png" },
       { id: "nsdc", name: "NSDC", logo: "/logos/nsdc.png" },
@@ -183,6 +175,6 @@ export const aboutUsPageData = {
       },
     ],
 
-    backgroundImage: "/home/hero.jpg",
+    backgroundImage: "/im-5.jpg",
   },
 };

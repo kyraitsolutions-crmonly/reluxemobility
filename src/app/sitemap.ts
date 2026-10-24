@@ -3,14 +3,8 @@ import type { MetadataRoute } from "next";
 
 const siteUrl = "https://www.reluxemobility.com";
 
-// Update when content changes. A fixed date is used instead of `new Date()`,
-// which cacheComponents does not allow during the static build.
 const lastModified = new Date("2026-10-17");
 
-/**
- * Built from the navbar links in components/navbar/navlink.tsx, so the sitemap
- * always matches what visitors can reach. A link with href "#" is hidden from both.
- */
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries = new Map<string, MetadataRoute.Sitemap[number]>();
 

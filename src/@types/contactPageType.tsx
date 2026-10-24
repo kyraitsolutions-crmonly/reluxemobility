@@ -2,7 +2,6 @@ import { JSX } from "react";
 
 export interface EnquiryFormProps {
   title: string;
-  serviceTypes: string[];
 }
 
 export interface ContactSectionProps {
@@ -13,6 +12,7 @@ export interface ContactSectionProps {
       id: string;
       title: string;
       description: string;
+      href?: string;
       icon: JSX.Element;
     }[];
   };
@@ -28,6 +28,7 @@ export interface LocationMapProps {
   title: string;
   description: string;
   address: string;
+  addressLink: string;
   mapEmbedUrl: string;
 }
 

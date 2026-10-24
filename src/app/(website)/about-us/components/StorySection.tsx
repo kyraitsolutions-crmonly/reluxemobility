@@ -31,7 +31,7 @@ const StorySection: React.FC<StorySectionProps> = ({
               {paragraph}
             </p>
           ))}
-          <div className="grid grid-cols-2 gap-6 pt-4">
+          {/* <div className="grid grid-cols-2 gap-6 pt-4">
             {statistics.map((stat) => (
               <div key={stat.id} className="space-y-1">
                 <p className="text-3xl md:text-4xl font-semibold text-dark">
@@ -40,7 +40,7 @@ const StorySection: React.FC<StorySectionProps> = ({
                 <p className="text-sm text-secondary">{stat.label}</p>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </SectionWithContainer>

@@ -28,14 +28,14 @@ export const corporatePageData = {
     highlight: "Done the Velvet Way",
     description:
       "One trusted mobility partner for your executives, employees and guests. Reliable chauffeur-driven travel with dedicated account management, customized billing and white-glove hospitality.",
-    image: "/home/hero.jpg",
+    image: "/fleet/8.png",
     points: [
       "Dedicated account manager for your organization",
       "Customized billing with consolidated monthly invoices",
       "High-security protocol compliance for VIP movement",
     ],
     stats: [
-      { value: "9", label: "PSUs & Government Bodies" },
+      { value: "59", label: "PSUs & Government Bodies" },
       { value: "5", label: "Fleet Categories" },
       { value: "24/7", label: "Real-Time Support" },
     ],
@@ -65,14 +65,6 @@ export const corporatePageData = {
       },
       { id: "sai", name: "SAI", logo: "/logos/sai.png" },
       { id: "mca", name: "MCA", logo: "/logos/mca.png" },
-      // { id: "dpe", name: "DPE" },
-      // { id: "msde", name: "MSDE" },
-      // { id: "acs-revenue", name: "ACS-REVENUE" },
-      // { id: "sez", name: "SEZ" },
-      // { id: "cbdt", name: "CBDT" },
-      // { id: "gad", name: "GAD" },
-      // { id: "sspl", name: "SSPL" },
-      //  { id: "pfa", name: "PFA" },
       { id: "stpi", name: "STPI", logo: "/logos/stpi.jpeg" },
       { id: "rdso", name: "RDSO", logo: "/logos/rdso.png" },
       { id: "nsdc", name: "NSDC", logo: "/logos/nsdc.png" },
@@ -166,7 +158,7 @@ export const corporatePageData = {
         title: "Executive & Daily Travel",
         description:
           "Hourly and full-day chauffeur packages for meetings, site visits and city travel.",
-        image: "/home/premium.png",
+        image: "/fleet/cars/city.jpg",
         href: "/services/hourly-rental",
       },
       {
@@ -174,7 +166,7 @@ export const corporatePageData = {
         title: "Airport Transfers",
         description:
           "Guaranteed on-time pickups and drops with live flight tracking.",
-        image: "/home/psu.png",
+        image: "/fleet/6.png",
         href: "/services/airport-transfers",
       },
       {
@@ -182,7 +174,7 @@ export const corporatePageData = {
         title: "Intercity & Outstation",
         description:
           "One-way and round trips with experienced highway chauffeurs.",
-        image: "/home/luxury.png",
+        image: "/fleet/cars/innova-hycross.jpg",
         href: "/services/outstation-travel",
       },
       {
@@ -190,7 +182,7 @@ export const corporatePageData = {
         title: "VIP & Delegation Movement",
         description:
           "Secure, discreet mobility for senior officials and visiting delegations.",
-        image: "/home/economy.png",
+        image: "/fleet/cars/e-class.jpg",
         href: "/services/corporate-psu",
       },
     ],

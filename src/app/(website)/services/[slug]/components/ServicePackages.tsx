@@ -9,7 +9,6 @@ const ServicePackages: React.FC<ServicePackagesProps> = ({
   items,
   inclusions,
 }) => {
-  // the middle package is highlighted by default, as in the design
   const [selectedId, setSelectedId] = useState(items[Math.floor(items.length / 2)]?.id);
 
   return (

@@ -26,7 +26,17 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 </span>
                 <div>
                   <p className="font-semibold text-dark">{item.title}</p>
-                  <p className="text-sm text-secondary">{item.description}</p>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="text-sm text-secondary underline-offset-4 hover:text-dark hover:underline"
+                      {...(item.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
+                    >
+                      {item.description}
+                    </a>
+                  ) : (
+                    <p className="text-sm text-secondary">{item.description}</p>
+                  )}
                 </div>
               </li>
             ))}
@@ -41,7 +51,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           </div>
         </div>
 
-        {/* the plain form is prerendered; the trip from the home page fills in once the page loads */}
         <Suspense fallback={<Form3 {...enquiryForm} />}>
           <ContactEnquiryForm {...enquiryForm} />
         </Suspense>

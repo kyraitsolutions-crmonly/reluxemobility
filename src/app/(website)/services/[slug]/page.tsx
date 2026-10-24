@@ -22,7 +22,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// every service except the current one, starting from the next in the list
 function getOtherServices(slug: string) {
   const index = serviceDetailPageData.findIndex((s) => s.slug === slug);
 

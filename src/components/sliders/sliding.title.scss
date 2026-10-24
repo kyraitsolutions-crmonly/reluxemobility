@@ -1,7 +1,6 @@
 .marquee-wrapper {
   display: flex;
   width: max-content;
-  /* slowed down from 18s to 36s */
   animation: marquee 36s linear infinite;
 }
 
@@ -13,12 +12,8 @@
 .marquee-item {
   display: inline-flex;
   align-items: center;
-  width: 150%; /* vertical center */
-  // gap: 1rem; /* spacing like image */
+  width: 150%;
   margin-right: .5rem;
-  // font-size: 42px;
-  // font-weight: 600;
-  // text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -26,9 +21,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  // color: var(--color-primary); /* or Tailwind text-primary */
-  // font-size: 1em;              /* same height as text */
-  // line-height: 1;
 }
 
 @keyframes marquee {

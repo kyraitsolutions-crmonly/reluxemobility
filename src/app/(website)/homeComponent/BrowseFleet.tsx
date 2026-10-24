@@ -36,9 +36,8 @@ export const BrowseFleetCard: React.FC<BrowseFleetProps["collections"][0]> = ({
 }) => {
   return (
     <div>
-      <div className="relative w-full aspect-4/3 overflow-hidden rounded-2xl">
-        <Image src={image} alt={title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover" />
-        {/* 3layer dark overlay */}
+      <div className="relative w-full aspect-4/3 overflow-hidden rounded-2xl bg-quaternary">
+        <Image src={image} alt={title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-contain px-6 pt-4 pb-16 mix-blend-multiply" />
         <div className="absolute inset-0 bg-linear-to-b from-0% via-50% to-100% from-navy-deep/0 via-navy-deep/0 to-navy-deep z-10" />
         <div className="bg-dark text-white absolute z-10 bottom-4 left-4 px-3 py-2 rounded-md">
           <p className="text-ivory/70 text-xs">{category}</p>

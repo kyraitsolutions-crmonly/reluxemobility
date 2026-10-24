@@ -25,16 +25,16 @@ const DiscoverMore: React.FC<DiscoverMoreProps> = ({
           <Link
             key={item.slug}
             href={`/fleet/${item.slug}`}
-            className="group relative flex aspect-16/10 items-end overflow-hidden rounded-2xl bg-dark"
+            className="group relative flex aspect-16/10 items-end overflow-hidden rounded-2xl bg-quaternary"
           >
             <Image
               src={item.image}
               alt={item.title}
               fill
               sizes="(min-width: 768px) 33vw, 100vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-dark/90 via-dark/30 to-transparent" />
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-dark via-dark/80 to-transparent" />
             <div className="relative p-5">
               <h3 className="text-lg font-semibold text-white">{item.title}</h3>
               <p className="text-[10px] font-semibold uppercase tracking-wider text-beige">

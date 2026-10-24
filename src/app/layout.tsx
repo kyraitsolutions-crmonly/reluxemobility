@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import "./style.scss";
+import Call from "@/components/ContactButton/Call";
+import Whatsapp from "@/components/ContactButton/WhatsApp";
 
-// Montserrat is the brand typeface (see public/Reluxe_Mobility_Logo/Logo Identity.jpg)
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
@@ -26,6 +27,8 @@ export default function RootLayout({ children }: LayoutProps) {
         suppressHydrationWarning={true}
       >
         {children}
+        <Call/>
+        <Whatsapp/>
       </body>
     </html>
   );

@@ -57,7 +57,6 @@ export default function Form2() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Connect your enquiry API here to send the values to your backend.
     setSubmitted(true);
   };
 

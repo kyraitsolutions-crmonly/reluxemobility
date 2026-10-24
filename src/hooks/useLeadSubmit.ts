@@ -5,13 +5,6 @@ import { useState } from "react";
 
 type LeadStatus = "idle" | "submitting" | "success" | "error";
 
-/**
- * Shared submit logic for every enquiry form on the site.
- * Builds the webhook payload and posts it to /api/lead, which adds the secret token.
- *
- *   const { submitLead, status, error } = useLeadSubmit();
- *   const sent = await submitLead({ formName: "Contact Page Enquiry", name, phone, ... });
- */
 export const useLeadSubmit = () => {
   const [status, setStatus] = useState<LeadStatus>("idle");
   const [error, setError] = useState("");
@@ -60,7 +53,6 @@ export const useLeadSubmit = () => {
     }
   };
 
-  /** Clear the success / error message, e.g. when the visitor edits the form again */
   const resetStatus = () => {
     setStatus("idle");
     setError("");

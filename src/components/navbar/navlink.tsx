@@ -1,10 +1,5 @@
-/**
- * To hide a page, set its href to "#". It disappears from the menu and the sitemap,
- * while its sub links (and their pages) keep working. Put the real path back to show it again.
- */
 export const isPageLink = (href: string) => href.startsWith("/");
 
-/** True when the current page belongs to this nav link (ignores the #section part) */
 export const isActiveLink = (pathname: string, href: string) => {
   const path = href.split("#")[0];
   return isPageLink(path) && path !== "/" && pathname.startsWith(path);
@@ -33,10 +28,6 @@ export const NavLink = {
           label: "Outstation Travel",
           href: "/services/outstation-travel",
         },
-        // {
-        //   label: "Corporate & PSU Velvet Service",
-        //   href: "/services/corporate-psu",
-        // },
       ],
     },
     {

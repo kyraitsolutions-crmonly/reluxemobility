@@ -2,7 +2,6 @@ import WebSiteFooter from "@/components/footer/WebSiteFooter";
 import WebsiteNav from "@/components/navbar/WebsiteNav";
 import type { Metadata } from "next";
 
-// cspell:ignore Reluxe
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.reluxemobility.com"),
   title: {

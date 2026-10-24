@@ -3,7 +3,6 @@
 import { ReactNode } from "react";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 
-// @import swiperr css
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/effect-coverflow";

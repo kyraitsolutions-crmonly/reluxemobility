@@ -104,14 +104,16 @@ export const VehicleCard: React.FC<
           alt={name}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="object-contain p-4"
+          className="object-contain p-4 mix-blend-multiply"
         />
       </div>
 
       <div className="flex flex-1 flex-col gap-5 p-5">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <h3 className="text-lg font-semibold text-dark">{name}</h3>
+            <h3 className="text-lg font-semibold text-dark">
+              {name} <span className="text-sm font-normal italic text-secondary">or similar</span>
+            </h3>
             <p className="text-sm text-secondary">{type}</p>
           </div>
           {badge && (

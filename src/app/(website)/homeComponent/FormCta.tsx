@@ -12,7 +12,6 @@ const FormCta: React.FC<FinalCtaProps> = ({
   return (
     <SectionWithContainer sectionClassName="bg-dark">
       <div className="grid lg:grid-cols-[.7fr_1fr] gap-4">
-        {/* contact details */}
         <div className="flex flex-col gap-6">
           <SectionHeading title={title} titleColor="text-white" />
           <p className="text-ivory/70">{description}</p>
@@ -27,7 +26,6 @@ const FormCta: React.FC<FinalCtaProps> = ({
             ))}
           </ul>
         </div>
-        {/* contact form */}
         <div className="">
           <Form2 />
         </div>

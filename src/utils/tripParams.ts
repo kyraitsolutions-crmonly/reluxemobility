@@ -1,18 +1,26 @@
 import { TripDetails } from "@/@types/leadType";
 
-// The home page trip search hands its values to the contact page through the URL,
-// e.g. /contact-us?from=…&to=…&date=18-10-2026&time=7:00+AM#contact
 
 const MAX_LENGTH = 200;
 
+const requiredKeys: (keyof TripDetails)[] = ["serviceType", "from", "date", "time"];
+
 export const tripToSearchParams = (trip: TripDetails) => {
-  return new URLSearchParams({ ...trip }).toString();
+  return new URLSearchParams(Object.entries(trip).filter(([, value]) => value)).toString();
 };
 
-/** Returns the trip only when the link carries all required details; incomplete links are ignored. */
 export const tripFromSearchParams = (params: URLSearchParams): TripDetails | null => {
   const read = (key: keyof TripDetails) => (params.get(key) ?? "").trim().slice(0, MAX_LENGTH);
-  const trip: TripDetails = { from: read("from"), to: read("to"), date: read("date"), time: read("time") };
+  const trip: TripDetails = {
+    serviceType: read("serviceType"),
+    from: read("from"),
+    stop: read("stop"),
+    to: read("to"),
+    package: read("package"),
+    date: read("date"),
+    returnDate: read("returnDate"),
+    time: read("time"),
+  };
 
-  return Object.values(trip).every(Boolean) ? trip : null;
+  return requiredKeys.every((key) => trip[key]) ? trip : null;
 };

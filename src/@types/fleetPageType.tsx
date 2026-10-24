@@ -57,7 +57,6 @@ export interface MarqueeCollectionProps {
   }[];
 }
 
-/* ---------- fleet category detail page (/fleet/[slug]) ---------- */
 
 export interface FleetModel {
   id: string;
@@ -73,7 +72,6 @@ export interface FleetModel {
   }[];
   tags: string[];
   specifications: string[];
-  bookLabel: string;
   bookHref: string;
 }
 
@@ -120,7 +118,6 @@ export interface FleetCategoryData {
     description: string;
     image: string;
   };
-  /** Used for the "Discover More Mobility" cards on other category pages */
   card: {
     title: string;
     tagline: string;

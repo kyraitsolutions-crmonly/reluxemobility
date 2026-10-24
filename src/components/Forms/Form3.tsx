@@ -5,7 +5,6 @@ import { TripDetails } from "@/@types/leadType";
 import { useLeadSubmit } from "@/hooks/useLeadSubmit";
 import { useId, useState, type FormEvent } from "react";
 import { FiCheck } from "react-icons/fi";
-import CustomSelect from "./CustomSelect";
 import FormStatus from "./FormStatus";
 import { darkSubmit, inputClass, labelClass, submitButtonClass, textareaClass } from "./formStyles";
 
@@ -27,28 +26,25 @@ type FormValues = {
   name: string;
   email: string;
   phone: string;
-  serviceType: string;
   message: string;
   agreed: boolean;
 };
 
-const emptyValues = (serviceTypes: string[]): FormValues => ({
+const emptyValues: FormValues = {
   name: "",
   email: "",
   phone: "",
-  serviceType: serviceTypes[0] ?? "",
   message: "",
   agreed: true,
-});
+};
 
 interface Form3Props extends EnquiryFormProps {
-  /** trip chosen in the home page search; sent to the CRM along with the enquiry */
   trip?: TripDetails | null;
 }
 
-const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
+const Form3: React.FC<Form3Props> = ({ title, trip }) => {
   const id = useId();
-  const [values, setValues] = useState<FormValues>(() => emptyValues(serviceTypes));
+  const [values, setValues] = useState<FormValues>(emptyValues);
   const { submitLead, status, error, isSubmitting, resetStatus } = useLeadSubmit();
 
   const updateField = <K extends keyof FormValues>(field: K, value: FormValues[K]) => {
@@ -66,24 +62,31 @@ const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
       phone: values.phone,
       message: values.message,
       customFields: {
-        serviceType: values.serviceType,
         ...(trip && {
+          serviceType: trip.serviceType,
           pickupLocation: trip.from,
+          ...(trip.stop && { stopLocation: trip.stop }),
           ...(trip.to && { dropLocation: trip.to }),
+          ...(trip.package && { package: trip.package }),
           pickupDate: trip.date,
+          ...(trip.returnDate && { returnDate: trip.returnDate }),
           pickupTime: trip.time,
         }),
       },
     });
 
-    if (sent) setValues(emptyValues(serviceTypes));
+    if (sent) setValues(emptyValues);
   };
 
   const tripDetails = trip
     ? [
+        { label: "Service", value: trip.serviceType },
         { label: "From", value: trip.from },
+        ...(trip.stop ? [{ label: "Stop", value: trip.stop }] : []),
         ...(trip.to ? [{ label: "To", value: trip.to }] : []),
+        ...(trip.package ? [{ label: "Package", value: trip.package }] : []),
         { label: "Pick Up Date", value: trip.date },
+        ...(trip.returnDate ? [{ label: "Return Date", value: trip.returnDate }] : []),
         { label: "Pick Up Time", value: trip.time },
       ]
     : [];
@@ -112,7 +115,7 @@ const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
             const fieldId = `${id}-${field.name}`;
 
             return (
-              <div className="flex min-w-0 flex-col gap-2" key={field.name}>
+              <div className={`flex min-w-0 flex-col gap-2 ${field.name === "name" ? "sm:col-span-2" : ""}`} key={field.name}>
                 <label className={labelClass()} htmlFor={fieldId}>
                   {field.label}
                 </label>
@@ -130,20 +133,6 @@ const Form3: React.FC<Form3Props> = ({ title, serviceTypes, trip }) => {
               </div>
             );
           })}
-
-          <div className="flex min-w-0 flex-col gap-2">
-            <label className={labelClass()} htmlFor={`${id}-serviceType`}>
-              Service Type
-            </label>
-            <CustomSelect
-              id={`${id}-serviceType`}
-              name="serviceType"
-              options={serviceTypes}
-              placeholder="Select service type"
-              value={values.serviceType}
-              onChange={(value) => updateField("serviceType", value)}
-            />
-          </div>
         </div>
 
         <div className="flex flex-col gap-2">
