@@ -11,7 +11,7 @@ function Whatsapp() {
     return null;
   }
   return (
-    <div className={`fixed bottom-24 lg:right-3 right-4 z-20 cursor-pointer`}>
+    <div className={`fixed bottom-10 lg:right-3 right-4 z-20 cursor-pointer`}>
       <Link
         href={contact.WhatsappCta}
         target="_blank"
