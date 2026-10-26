@@ -6,8 +6,8 @@ Thank you!`);
 
 
 export const contact = {
-  email: "",
-  emailCta: "mailto:",
+  email: "info@reluxemobility.com",
+  emailCta: "mailto:info@reluxemobility.com",
   mapUrl: "https://maps.app.goo.gl/FUfF1dN6bTZ64yhJ6",
   mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3330.5720333343506!2d77.19264107549854!3d28.571435975698183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM0JzE3LjIiTiA3N8KwMTEnNDIuOCJF!5e1!3m2!1sen!2sin!4v1792857028282!5m2!1sen!2sin",
   phone: ["+91 70005 70028"],
