@@ -16,7 +16,7 @@ const CorporateHero: React.FC<CorporateHeroProps> = ({
 }) => {
   return (
     <Section defaultPadding={false} className="relative">
-      <Image src={image} alt={`${title} ${highlight}`} fill priority className="object-cover" />
+      <Image src={image} alt={`${title} ${highlight}`} fill preload fetchPriority="high" sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 z-10 bg-linear-to-r from-dark via-dark/85 to-dark/50" />
 
       <Container className="relative z-20 grid items-center gap-10 py-16 md:py-20 lg:grid-cols-[1fr_.85fr] lg:gap-16">
@@ -26,7 +26,7 @@ const CorporateHero: React.FC<CorporateHeroProps> = ({
             {eyebrow}
           </p>
           <h1 className="text-3xl md:text-4xl lg:text-5xl/tight font-semibold">
-            {title}
+            {title}{" "}
             <span className="block text-beige">{highlight}</span>
           </h1>
           <p className="max-w-xl text-white/80 md:text-lg">{description}</p>

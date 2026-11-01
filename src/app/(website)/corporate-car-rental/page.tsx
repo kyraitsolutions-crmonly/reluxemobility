@@ -1,5 +1,6 @@
 import CtaBanner from "@/components/common/CtaBanner";
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/utils/seo";
 import FaqSection from "../contact-us/components/FaqSection";
 import TrustedOrganizations from "../homeComponent/TrustedOrganizations";
 import BookingProcess from "../services/components/BookingProcess";
@@ -8,7 +9,7 @@ import CorporateHero from "./components/CorporateHero";
 import CorporateSolutions from "./components/CorporateSolutions";
 import { corporatePageData } from "./components/pageData";
 
-const pageUrl = "https://www.reluxemobility.com/corporate-car-rental";
+const pageUrl = "https://reluxemobility.com/corporate-car-rental";
 
 export const metadata: Metadata = {
   title: corporatePageData.metaData.title,
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     canonical: pageUrl,
   },
   openGraph: {
+    ...baseOpenGraph,
     title: corporatePageData.metaData.title,
     description: corporatePageData.metaData.description,
     url: pageUrl,

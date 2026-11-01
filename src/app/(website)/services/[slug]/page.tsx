@@ -1,5 +1,6 @@
 import PageHero from "@/components/common/PageHero";
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/utils/seo";
 import { notFound } from "next/navigation";
 import HowItWorks from "./components/HowItWorks";
 import OtherServices from "./components/OtherServices";
@@ -14,7 +15,7 @@ interface Params {
   params: Promise<{ slug: string }>;
 }
 
-const siteUrl = "https://www.reluxemobility.com";
+const siteUrl = "https://reluxemobility.com";
 
 export async function generateStaticParams() {
   return serviceDetailPageData.map((service) => ({
@@ -47,10 +48,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       alternates: {
         canonical: `${siteUrl}/services/${service.slug}`,
         languages: {
-          "en-US": `${siteUrl}/services/${service.slug}`,
+          "en-IN": `${siteUrl}/services/${service.slug}`,
         },
       },
       openGraph: {
+        ...baseOpenGraph,
         title: service.metaData.title,
         description: service.metaData.description,
         images: [service.hero.image],

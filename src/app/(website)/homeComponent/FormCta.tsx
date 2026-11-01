@@ -11,15 +11,15 @@ const FormCta: React.FC<FinalCtaProps> = ({
 }) => {
   return (
     <SectionWithContainer sectionClassName="bg-dark">
-      <div className="grid lg:grid-cols-[.7fr_1fr] gap-4">
+      <div className="grid lg:grid-cols-[.7fr_1fr] gap-10 lg:gap-16 items-center">
         <div className="flex flex-col gap-6">
           <SectionHeading title={title} titleColor="text-white" />
           <p className="text-ivory/70">{description}</p>
-          <ul className="flex flex-col gap-4">
+          <ul className="flex flex-col gap-5">
             {contactDetails.map((detail, index) => (
-              <li key={index} className="text-ivory/70 font-semibold">
-                <Link href={detail.href} className="grid grid-cols-[auto_1fr] gap-2 items-center">
-                  <span>{detail.icon}</span>
+              <li key={index} className="text-ivory/90 font-semibold">
+                <Link href={detail.href} className="grid grid-cols-[auto_1fr] gap-3 items-center transition hover:text-white">
+                  <span className="flex size-10 items-center justify-center rounded-full bg-beige/10 text-lg text-beige ring-1 ring-beige/30">{detail.icon}</span>
                   {detail.label}
                 </Link>
               </li>

@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "react-datepicker/dist/react-datepicker.css";
 
 :root {
   --background: #ffffff;
@@ -9,7 +8,7 @@
 @theme inline {
   --color-primary: #1A3758;
   --color-secondary: #4A5A70;
-  --color-muted: #66768B;
+  --color-muted: #5F6E82;
   --color-line: #E6E0D4;
   --color-line-strong: #D6CEBF;
   --color-tertiary: #F1ECE2;
@@ -18,7 +17,7 @@
   --color-navy-deep: #0F2238;
   --color-beige: #E0C7A3;
   --color-ivory: #F9F6EF;
-  --color-accent: #9C7B4F;
+  --color-accent: #8A6A40;
   --color-error: #DC2626;
 }
 
@@ -27,6 +26,11 @@
 body {
   font-family: var(--font-montserrat), sans-serif;
   color: var(--color-dark);
+}
+
+/* react-datepicker's own CSS sets z-index: 1 and, being unlayered, beats Tailwind's z-[9999] utility. */
+.react-datepicker-popper {
+  z-index: 50 !important;
 }
 
 .form-datepicker-calendar {
@@ -58,7 +62,7 @@ body {
   font-weight: 600;
 }
 
-.form-datepicker-day {
+.form-datepicker-calendar .form-datepicker-day {
   border-radius: 8px !important;
   color: #1a3758;
 }
@@ -107,4 +111,59 @@ body {
 .form-datepicker-calendar input.react-datepicker-time__input:focus {
   border-color: #1a3758;
   outline: none;
+}
+
+@keyframes popup-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes popup-out {
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [class*="animate-[popup-"],
+  [class*="animate-[fade-"] {
+    animation-duration: 1ms !important;
+  }
+}
+
+/* Home banner (Swiper): slow zoom on the active slide. */
+.hero-swiper .swiper-slide img {
+  transform: scale(1);
+  transition: transform 7s ease-out;
+}
+
+.hero-swiper .swiper-slide-active img {
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-swiper .swiper-slide img,
+  .hero-swiper .swiper-slide-active img {
+    transform: none;
+    transition: none;
+  }
 }

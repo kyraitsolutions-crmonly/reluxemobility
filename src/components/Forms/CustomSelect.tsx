@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useId, useRef, useState, type KeyboardEvent } from "react";
 import { FiCheck, FiChevronDown } from "react-icons/fi";
 import { FieldVariant, fieldTheme, inputClass } from "./formStyles";
 
@@ -33,10 +33,21 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 }) => {
   const listId = useId();
   const triggerRef = useRef<HTMLButtonElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
   const [innerValue, setInnerValue] = useState(defaultValue);
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(-1);
   const [missing, setMissing] = useState(false);
+
+  // Keep the active option visible in long lists (e.g. times) by scrolling the list only, never the page.
+  useEffect(() => {
+    const list = listRef.current;
+    const option = list?.children[activeIndex] as HTMLElement | undefined;
+    if (!list || !option) return;
+    if (option.offsetTop < list.scrollTop) list.scrollTop = option.offsetTop;
+    else if (option.offsetTop + option.offsetHeight > list.scrollTop + list.clientHeight)
+      list.scrollTop = option.offsetTop + option.offsetHeight - list.clientHeight;
+  }, [isOpen, activeIndex]);
 
   const selected = value ?? innerValue;
   const showError = hasError || missing;
@@ -142,6 +153,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
       {isOpen && (
         <ul
+          ref={listRef}
           id={listId}
           role="listbox"
           aria-labelledby={id}

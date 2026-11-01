@@ -29,7 +29,7 @@ export const aboutUsPageData = {
     paragraphs: [
       "Founded on the principle that mobility should be more than just transportation, Reluxe Mobility was established to redefine premium chauffeur-driven travel through innovation, comfort, and personalized care. With the support and experience of Khaira Tourist Services, Reluxe Mobility bridges the gap between efficiency and luxury, delivering a refined travel experience that prioritizes every passenger’s comfort, safety, and peace of mind.",
 
-      'Our mission is to provide an unmatched “Velvet Experience” — a seamless fusion of a premium fleet, highly trained professionals, efficient fleet management, and a customer-first approach. At Reluxe Mobility, we believe every journey should reflect sophistication, reliability, and exceptional service, ensuring that each ride is as memorable as the destination itself.',
+      'Our mission is to provide an unmatched “Velvet Service” — a seamless fusion of a premium fleet, highly trained professionals, efficient fleet management, and a customer-first approach. At Reluxe Mobility, we believe every journey should reflect sophistication, reliability, and exceptional service, ensuring that each ride is as memorable as the destination itself.',
     ],
 
     image: "/im-4.jpg",
@@ -90,7 +90,7 @@ export const aboutUsPageData = {
     features: [
       {
         id: "sanitized-fleet",
-        title: "Spotless, Sanitized Fleet",
+        title: "Spotless, Sanitised Fleet",
         description:
           "Strict hygiene protocols with daily professional detailing and multi-point safety checks.",
       },
@@ -108,17 +108,12 @@ export const aboutUsPageData = {
       },
     ],
 
-    testimonial: {
-      eyebrow: "Verified Excellence",
-      quote:
-        "The attention to detail in their Velvet service is unlike anything we've experienced in corporate travel.",
-    },
   },
 
   trustedOrganizations: {
     title: "Trusted by the Nation's Leading Entities",
     description:
-      "Official Mobility Partners for Major PSUs & Government Bodies",
+      "Serving 70+ PSUs, corporates and government bodies across India.",
 
     organizations: [
       {
@@ -167,11 +162,11 @@ export const aboutUsPageData = {
     buttons: [
       {
         label: "Book Your Ride Now",
-        href: "/contact-us#contact",
+        href: "/#booking",
       },
       {
-        label: "View Pricing",
-        href: "/pricing",
+        label: "Speak to Our Team",
+        href: "/contact-us",
       },
     ],
 

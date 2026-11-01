@@ -20,7 +20,7 @@ const SignatureEvent: React.FC<SignatureEventProps> = ({
 
         <div className="space-y-6 text-white">
           <h2 className="text-3xl md:text-4xl/tight font-semibold">
-            {title}
+            {title}{" "}
             <span className="block text-beige">{highlight}</span>
           </h2>
           <p className="text-sm text-ivory/70">{description}</p>

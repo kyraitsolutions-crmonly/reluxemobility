@@ -161,11 +161,11 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
 
         <div className="flex flex-col gap-3 border-t border-line p-4">
           <div className="flex flex-col gap-2 px-1 text-sm text-secondary">
-            <a href={contact.emailCta} className="flex items-center gap-2 hover:text-dark">
+            <Link href={contact.emailCta} className="flex items-center gap-2 hover:text-dark">
               <LuMail aria-hidden="true" className="size-4 shrink-0" />
               {contact.email}
-            </a>
-            <a
+            </Link>
+            <Link
               href={contact.addressLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -173,16 +173,16 @@ const MobileNav = ({ isOpen, onClose }: MobileNavProps) => {
             >
               <LuMapPin aria-hidden="true" className="size-4 shrink-0" />
               {contact.address}
-            </a>
+            </Link>
           </div>
-          <a
+          <Link
             href={contact.callCta}
             onClick={closeNavigation}
             className="flex items-center justify-center gap-2 rounded-xl border border-line py-3 text-sm font-semibold text-dark transition-colors hover:bg-quaternary"
           >
             <LuPhone aria-hidden="true" className="size-4" />
             Call {contact.phone[0]}
-          </a>
+          </Link>
           <LinkButton
             href={bookNow.href}
             label={bookNow.label}

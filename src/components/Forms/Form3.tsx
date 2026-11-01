@@ -71,6 +71,7 @@ const Form3: React.FC<Form3Props> = ({ title, trip }) => {
           pickupDate: trip.date,
           ...(trip.returnDate && { returnDate: trip.returnDate }),
           pickupTime: trip.time,
+          ...(trip.car && { vehicle: trip.car }),
         }),
       },
     });
@@ -82,12 +83,13 @@ const Form3: React.FC<Form3Props> = ({ title, trip }) => {
     ? [
         { label: "Service", value: trip.serviceType },
         { label: "From", value: trip.from },
-        ...(trip.stop ? [{ label: "Stop", value: trip.stop }] : []),
+        ...(trip.stop ? [{ label: trip.stop.includes(",") ? "Stops" : "Stop", value: trip.stop }] : []),
         ...(trip.to ? [{ label: "To", value: trip.to }] : []),
         ...(trip.package ? [{ label: "Package", value: trip.package }] : []),
         { label: "Pick Up Date", value: trip.date },
         ...(trip.returnDate ? [{ label: "Return Date", value: trip.returnDate }] : []),
         { label: "Pick Up Time", value: trip.time },
+        ...(trip.car ? [{ label: "Car", value: trip.car }] : []),
       ]
     : [];
 

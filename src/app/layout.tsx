@@ -21,7 +21,7 @@ type LayoutProps = {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body
         className={`${montserrat.variable} h-full antialiased overflow-x-clip`}
         suppressHydrationWarning={true}

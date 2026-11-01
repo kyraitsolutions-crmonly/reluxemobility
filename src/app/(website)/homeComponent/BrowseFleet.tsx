@@ -2,14 +2,16 @@ import { BrowseFleetProps } from "@/@types/homePageType";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeading } from "@/components/typography";
 import Image from "next/image";
+import Link from "next/link";
 
 const BrowseFleet: React.FC<BrowseFleetProps> = ({
+  id,
   title,
   description,
   collections: items,
 }) => {
   return (
-    <SectionWithContainer containerClassName="md:space-y-14 space-y-10">
+    <SectionWithContainer sectionId={id} sectionClassName="scroll-mt-20" containerClassName="md:space-y-14 space-y-10">
       <div className="space-y-3">
         <SectionHeading title={title} />
         <p className="text-secondary">{description}</p>
@@ -33,10 +35,11 @@ export const BrowseFleetCard: React.FC<BrowseFleetProps["collections"][0]> = ({
   tier,
   description,
   image,
+  href,
 }) => {
   return (
-    <div>
-      <div className="relative w-full aspect-4/3 overflow-hidden rounded-2xl bg-quaternary">
+    <Link href={href} className="group block rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-dark">
+      <div className="relative w-full aspect-4/3 overflow-hidden rounded-2xl bg-quaternary transition group-hover:shadow-lg">
         <Image src={image} alt={title} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-contain px-6 pt-4 pb-16 mix-blend-multiply" />
         <div className="absolute inset-0 bg-linear-to-b from-0% via-50% to-100% from-navy-deep/0 via-navy-deep/0 to-navy-deep z-10" />
         <div className="bg-dark text-white absolute z-10 bottom-4 left-4 px-3 py-2 rounded-md">
@@ -49,6 +52,6 @@ export const BrowseFleetCard: React.FC<BrowseFleetProps["collections"][0]> = ({
         <h3 className="text-lg font-semibold">{tier}</h3>
         <p className="text-secondary">{description}</p>
       </div>
-    </div>
+    </Link>
   );
 };

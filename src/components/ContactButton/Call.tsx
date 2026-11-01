@@ -13,7 +13,7 @@ function Call() {
     }
   return (
     <div
-      className={`fixed bottom-10 lg:left-3  left-4 z-20 cursor-pointer`}
+      className={`fixed bottom-26 lg:right-3 right-4 z-20 cursor-pointer`}
     >
       <Link
         href={contact.callCta}

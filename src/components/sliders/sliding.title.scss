@@ -1,33 +1,59 @@
-.marquee-wrapper {
+.marquee {
+  position: relative;
+  overflow: hidden;
+  padding-block: 0.75rem;
+  // Soft fade at both edges instead of logos being sliced off.
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.marquee-strip {
   display: flex;
   width: max-content;
-  animation: marquee 36s linear infinite;
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-strip {
+  animation-play-state: paused;
 }
 
 .marquee-track {
   display: flex;
-  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
+// Every card is the same size so each logo gets the full box; spacing is a margin
+// (not gap) so both copies are exactly equal and the -50% loop lines up perfectly.
 .marquee-item {
-  display: inline-flex;
-  align-items: center;
-  width: 150%;
-  margin-right: .5rem;
-  white-space: nowrap;
-}
+  flex: none;
+  width: 10rem;
+  height: 9.5rem;
+  margin-right: 1rem;
 
-.separator {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  @media (min-width: 768px) {
+    width: 11rem;
+    height: 10.5rem;
+    margin-right: 1.25rem;
+  }
 }
 
 @keyframes marquee {
   from {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-strip {
+    animation: none;
+  }
+
+  .marquee {
+    overflow-x: auto;
   }
 }

@@ -1,25 +1,13 @@
-import CtaBanner from "@/components/common/CtaBanner";
-import PageHero from "@/components/common/PageHero";
 import type { Metadata } from "next";
-import FleetShowcase from "./components/FleetShowcase";
-import GreenFleet from "./components/GreenFleet";
-import MarqueeCollection from "./components/MarqueeCollection";
-import { fleetPageData } from "./components/pageData";
+import { redirect } from "next/navigation";
+import { fleetCategoryPageData } from "./[slug]/components/pageData";
 
+// The fleet overview is hidden: /fleet sends visitors to the first fleet category,
+// and it's kept out of search engines and AI crawlers (see also robots.ts).
 export const metadata: Metadata = {
-  title: "Our Fleet",
-  description:
-    "Explore the Reluxe Mobility fleet — executive sedans, premium SUVs, zero-emission EVs and luxury vehicles, all maintained to the highest standards.",
+  robots: { index: false, follow: false, nocache: true },
 };
 
 export default function Fleet() {
-  return (
-    <main>
-      <PageHero {...fleetPageData.hero} />
-      <FleetShowcase {...fleetPageData.fleetShowcase} />
-      <GreenFleet {...fleetPageData.greenFleet} />
-      <MarqueeCollection {...fleetPageData.marqueeCollection} />
-      <CtaBanner {...fleetPageData.finalCta} />
-    </main>
-  );
+  redirect(`/fleet/${fleetCategoryPageData[0].slug}`);
 }

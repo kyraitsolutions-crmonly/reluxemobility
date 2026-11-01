@@ -1,25 +1,13 @@
-import CtaBanner from "@/components/common/CtaBanner";
-import PageHero from "@/components/common/PageHero";
 import type { Metadata } from "next";
-import BookingProcess from "./components/BookingProcess";
-import { servicesPageData } from "./components/pageData";
-import ServiceDetails from "./components/ServiceDetails";
-import VelvetStandards from "./components/VelvetStandards";
+import { redirect } from "next/navigation";
+import { serviceDetailPageData } from "./[slug]/components/pageData";
 
+// The services overview is hidden: /services sends visitors to the first service,
+// and it's kept out of search engines and AI crawlers (see also robots.ts).
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "Hourly city rentals, airport transfers, outstation travel and corporate & PSU mobility — premium chauffeur services from Reluxe Mobility.",
+  robots: { index: false, follow: false, nocache: true },
 };
 
 export default function Services() {
-  return (
-    <main>
-      <PageHero {...servicesPageData.hero} accent />
-      <ServiceDetails {...servicesPageData.serviceDetails} />
-      <VelvetStandards {...servicesPageData.velvetStandards} />
-      <BookingProcess {...servicesPageData.bookingProcess} />
-      <CtaBanner {...servicesPageData.finalCta} accent />
-    </main>
-  );
+  redirect(`/services/${serviceDetailPageData[0].slug}`);
 }

@@ -1,15 +1,18 @@
 import WebSiteFooter from "@/components/footer/WebSiteFooter";
+import SamePageHashLinks from "@/components/common/SamePageHashLinks";
+import TravelExpertPopup from "@/components/common/TravelExpertPopup";
 import WebsiteNav from "@/components/navbar/WebsiteNav";
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/utils/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.reluxemobility.com"),
+  metadataBase: new URL("https://reluxemobility.com"),
   title: {
     default: "Reluxe Mobility",
     template: "%s | Reluxe Mobility",
   },
   description:
-    "Reluxe Mobility offers premium car rental and chauffeur services — reliable, seamless, luxury-first travel for retail and corporate clients, with signature white-glove Velvet Services for corporates and PSUs.",
+    "Chauffeur-driven sedans, SUVs, EVs and luxury cars for corporates, institutions and discerning travellers. Punctual, discreet, and run to the Velvet Service standard.",
   keywords: [
     "Reluxe Mobility",
     "premium car rental",
@@ -25,10 +28,8 @@ export const metadata: Metadata = {
     title: "Reluxe Mobility",
     description:
       "Premium car rental & chauffeur mobility solutions — reliable, seamless and luxury-first, anchored by our signature Velvet Services.",
-    url: "https://www.reluxemobility.com",
-    siteName: "Reluxe Mobility",
-    locale: "en_US",
-    type: "website",
+    url: "https://reluxemobility.com",
+    ...baseOpenGraph,
   },
   twitter: {
     card: "summary_large_image",
@@ -48,6 +49,8 @@ export default function RootLayout({ children }: LayoutProps) {
       <WebsiteNav />
       {children}
       <WebSiteFooter />
+      <SamePageHashLinks />
+      <TravelExpertPopup />
     </>
   );
 }

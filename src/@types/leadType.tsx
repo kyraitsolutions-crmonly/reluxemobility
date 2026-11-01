@@ -30,4 +30,8 @@ export interface TripDetails {
   date: string;
   returnDate: string;
   time: string;
+  // Cab category picked in Plan Your Journey (optional filter for Explore Cars).
+  category?: string;
+  // Car chosen on Explore Cars, e.g. "Tempo Traveller (12+1)".
+  car?: string;
 }

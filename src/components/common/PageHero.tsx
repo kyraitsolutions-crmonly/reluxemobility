@@ -26,7 +26,7 @@ const PageHero: React.FC<PageHeroProps> = ({
       defaultPadding={false}
       className={`relative w-full flex items-center min-h-80 md:min-h-130 ${className}`}
     >
-      <Image src={image} alt={highlight ? `${title} ${highlight}` : title} fill priority className="object-cover" />
+      <Image src={image} alt={highlight ? `${title} ${highlight}` : title} fill preload fetchPriority="high" sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/30 to-black/10 z-10" />
       <Container className="relative z-20 py-20 md:py-28 text-white">
         <div className="max-w-2xl space-y-5">

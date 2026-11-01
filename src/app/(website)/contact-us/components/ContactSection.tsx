@@ -3,6 +3,7 @@ import ContactEnquiryForm from "@/components/Forms/ContactEnquiryForm";
 import Form3 from "@/components/Forms/Form3";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { Suspense } from "react";
+import Link from "next/link";
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   id,
@@ -27,13 +28,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 <div>
                   <p className="font-semibold text-dark">{item.title}</p>
                   {item.href ? (
-                    <a
+                    <Link
                       href={item.href}
                       className="text-sm text-secondary underline-offset-4 hover:text-dark hover:underline"
                       {...(item.href.startsWith("http") && { target: "_blank", rel: "noopener noreferrer" })}
                     >
                       {item.description}
-                    </a>
+                    </Link>
                   ) : (
                     <p className="text-sm text-secondary">{item.description}</p>
                   )}

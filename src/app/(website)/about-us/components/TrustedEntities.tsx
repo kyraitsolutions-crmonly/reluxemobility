@@ -1,7 +1,7 @@
 import { TrustedEntitiesProps } from "@/@types/aboutPageType";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeading } from "@/components/typography";
-import Image from "next/image";
+import SlidingTitle from "@/components/sliders/SlidingTitle";
 
 const TrustedEntities: React.FC<TrustedEntitiesProps> = ({
   title,
@@ -15,25 +15,7 @@ const TrustedEntities: React.FC<TrustedEntitiesProps> = ({
         <p className="text-secondary text-sm">{description}</p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {organizations.map((organization) => (
-          <div
-            key={organization.id}
-            className="flex flex-col items-center justify-center gap-1 rounded-xl bg-tertiary/70 px-4 py-6 text-center min-h-24"
-          >
-            <Image
-              src={organization.logo}
-              alt={organization.name}
-              width={100}
-              height={100}
-              className="object-contain"
-            />
-            <p className="text-xl font-semibold text-dark">
-              {organization.name}
-            </p>
-          </div>
-        ))}
-      </div>
+      <SlidingTitle items={organizations} />
     </SectionWithContainer>
   );
 };

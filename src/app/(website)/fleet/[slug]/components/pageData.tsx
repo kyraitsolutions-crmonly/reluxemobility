@@ -7,7 +7,7 @@ import {
   LuWifi,
 } from "react-icons/lu";
 
-const bookHref = "/contact-us#contact";
+const bookHref = "/#booking";
 
 export const fleetCategorySharedData = {
   modelShowcase: {
@@ -40,20 +40,20 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
   {
     slug: "compact-sedans",
     metaData: {
-      title: "Compact Sedans",
+      title: "Essential Sedans",
       description:
         "Reliable, cost-effective compact sedans with professional chauffeurs for daily city travel — Maruti Suzuki Dzire, Honda Amaze and more.",
       keyWords: ["compact sedan rental", "chauffeur driven sedan", "city car rental", "Dzire rental", "Amaze rental"],
     },
     hero: {
       title: "The",
-      highlight: "Compact Collection",
+      highlight: "Essential Sedans",
       description:
         "Smart, efficient and always dependable. Our compact sedans deliver the Reluxe standard of service for everyday city commutes and budget-conscious business travel.",
       image: "/fleet/6.png",
     },
     card: {
-      title: "Compact Sedans",
+      title: "Essential Sedans",
       tagline: "Smart & Efficient",
       image: "/fleet/cars/dzire.jpg",
     },
@@ -94,7 +94,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         specifications: [
           "Automatic climate control",
           "USB charging for rear passengers",
-          "Sanitized after every trip",
+          "Sanitised after every trip",
           "GPS-tracked with live trip sharing",
         ],
         bookHref,
@@ -114,7 +114,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         specifications: [
           "Spacious rear legroom",
           "USB charging for rear passengers",
-          "Sanitized after every trip",
+          "Sanitised after every trip",
           "GPS-tracked with live trip sharing",
         ],
         bookHref,
@@ -127,20 +127,20 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
   {
     slug: "premium-sedans",
     metaData: {
-      title: "Premium Sedans",
+      title: "Executive Sedans",
       description:
         "Chauffeur-driven premium sedans for business travel and airport transfers — Honda City and Maruti Suzuki Ciaz with the Reluxe Velvet Service.",
       keyWords: ["premium sedan rental", "executive car hire", "Honda City rental", "Ciaz rental", "corporate car rental"],
     },
     hero: {
       title: "The",
-      highlight: "Premium Sedans",
+      highlight: "Executive Sedans",
       description:
         "The standard of corporate efficiency and comfort. Spacious, refined sedans that keep executives productive between meetings and airport runs.",
       image: "/fleet/12.png",
     },
     card: {
-      title: "Premium Sedans",
+      title: "Executive Sedans",
       tagline: "Everyday Excellence",
       image: "/fleet/cars/city.jpg",
     },
@@ -155,7 +155,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
         id: "corporate-ready",
         title: "Corporate Ready",
         description:
-          "The preferred choice for daily business travel, with standardized invoicing and monthly billing for partners.",
+          "The preferred choice for daily business travel, with standardised invoicing and monthly billing for partners.",
       },
       {
         id: "airport-specialist",
@@ -208,7 +208,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       },
     ],
     signatureDescription:
-      'Booking from our Premium Sedans guarantees the "Velvet Service" protocol as standard. Your chauffeur will arrive 15 minutes early, impeccably attired, and briefed on your specific itinerary and preferences.',
+      'Booking from our Executive Sedans guarantees the "Velvet Service" protocol as standard. Your chauffeur will arrive 15 minutes early, impeccably attired, and briefed on your specific itinerary and preferences.',
   },
 
   {
@@ -221,13 +221,13 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
     },
     hero: {
       title: "The",
-      highlight: "Executive SUVs",
+      highlight: "Premium SUVs & MUVs",
       description:
         "Spacious and commanding. Our premium SUVs and MUVs carry teams, families and luggage in comfort — in the city or on the highway.",
       image: "/fleet/4.png",
     },
     card: {
-      title: "Executive SUVs",
+      title: "Premium SUVs & MUVs",
       tagline: "Spacious & Commanding",
       image: "/fleet/4.png",
     },
@@ -276,7 +276,6 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       {
         id: "maruti-invicto",
         name: "Maruti Suzuki Invicto",
-        badge: "Hybrid Available",
         description:
           "Premium comfort for every row. The Invicto offers generous space, a hushed hybrid drive and a feature-rich cabin.",
         image: "/fleet/cars/invicto.jpg",
@@ -296,7 +295,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       },
     ],
     signatureDescription:
-      'Booking from our Executive SUVs guarantees the "Velvet Service" protocol as standard. Your chauffeur will arrive 15 minutes early, assist with luggage, and be fully briefed on your route and stops.',
+      'Booking from our Premium SUVs & MUVs guarantees the "Velvet Service" protocol as standard. Your chauffeur will arrive 15 minutes early, assist with luggage, and be fully briefed on your route and stops.',
   },
 
   {
@@ -311,7 +310,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       title: "The",
       highlight: "Green Fleet",
       description:
-        "Sustainable luxury without compromise. Silent, zero-emission premium electric SUVs that help your organization travel responsibly.",
+        "Sustainable luxury without compromise. Silent, zero-emission premium electric SUVs that help your organisation travel responsibly.",
       image: "/fleet/image_d3a5a536.jpg",
     },
     card: {
@@ -378,7 +377,7 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
       title: "The",
       highlight: "Luxury Series",
       description:
-        "Uncompromising sophistication for those who demand the finest. Our Luxury Series features flagship sedans from the world's most prestigious automotive houses.",
+        "Flagship sedans for leadership, dignitaries and the moments that matter.",
       image: "/fleet/image_60f71a3a.jpg",
     },
     card: {
@@ -394,14 +393,14 @@ export const fleetCategoryPageData: FleetCategoryData[] = [
           "Every vehicle in our Luxury Series is selected for its superior ride quality, acoustic insulation, and rear-cabin amenities. Designed specifically for corporate heads and VIP guests.",
       },
       {
-        id: "sustainable-power",
-        title: "Sustainable Power",
+        id: "discretion",
+        title: "Discretion",
         description:
-          "Our luxury fleet includes the latest Euro 6 compliant and Hybrid models, ensuring your premium travel footprint is as light as possible without sacrificing performance.",
+          "Privacy-first service for VIP guests and senior leaders.",
       },
       {
-        id: "velvet-protection",
-        title: "Velvet Protection",
+        id: "protocol-trained-chauffeurs",
+        title: "Protocol-Trained Chauffeurs",
         description:
           "Includes specialized chauffeur training in security protocols, privacy management, and white-glove hospitality standards unique to Reluxe Mobility.",
       },

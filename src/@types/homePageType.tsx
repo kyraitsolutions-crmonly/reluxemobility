@@ -12,7 +12,7 @@ export interface HeroProps {
     title: string;
     description: string;
   }[];
-  img: string;
+  images: string[];
 }
 
 export interface ServiceOfferingsProps {
@@ -23,6 +23,7 @@ export interface ServiceOfferingsProps {
     number: string;
     title: string;
     description: string;
+    href: string;
   }[];
 }
 
@@ -59,6 +60,7 @@ export interface BrowseFleetProps {
     tier: string;
     description: string;
     image: string;
+    href: string;
   }[];
 }
 

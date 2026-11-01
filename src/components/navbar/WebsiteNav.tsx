@@ -34,7 +34,7 @@ const WebsiteNav = () => {
             >
               <Image
                 fill
-                priority
+                preload
                 sizes="(min-width: 1024px) 176px, 144px"
                 className="object-contain"
                 src={NavLink.logo}
@@ -113,7 +113,7 @@ const WebsiteNav = () => {
               })}
             </ul>
             <div className="flex items-center gap-4 lg:gap-6">
-              <a
+              <Link
                 href={contact.callCta}
                 aria-label={`Call ${contact.phone[0]}`}
                 className="flex items-center gap-2 text-sm font-semibold text-dark transition-colors hover:text-secondary max-md:hidden"
@@ -122,7 +122,7 @@ const WebsiteNav = () => {
                   <LuPhone aria-hidden="true" className="size-4" />
                 </span>
                 <span className="lg:max-xl:hidden">{contact.phone[0]}</span>
-              </a>
+              </Link>
               <LinkButton
                 href={bookNow.href}
                 label={bookNow.label}

@@ -1,6 +1,8 @@
 import { LocationMapProps } from "@/@types/contactPageType";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { LuMapPin } from "react-icons/lu";
+import MapEmbed from "./MapEmbed";
+import Link from "next/link";
 
 const LocationMap: React.FC<LocationMapProps> = ({
   title,
@@ -14,15 +16,8 @@ const LocationMap: React.FC<LocationMapProps> = ({
       <div className="relative overflow-hidden rounded-3xl lg:rounded-[40px] bg-line aspect-4/3 md:aspect-16/6">
         {mapEmbedUrl ? (
           <>
-            <iframe
-              src={mapEmbedUrl}
-              title={`${title} location map`}
-              className="absolute inset-0 h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-            <a
+            <MapEmbed src={mapEmbedUrl} title={`${title} location map`} />
+            <Link
               href={addressLink}
               target="_blank"
               rel="noopener noreferrer"
@@ -35,7 +30,7 @@ const LocationMap: React.FC<LocationMapProps> = ({
                 <span className="block font-semibold text-dark">{title}</span>
                 <span className="block text-sm text-secondary">{address}</span>
               </span>
-            </a>
+            </Link>
           </>
         ) : (
           <>

@@ -52,7 +52,7 @@ interface FooterLinks {
 export const WebsiteFooterLinks: FooterLinks = {
   logo: "/logo/reluxe-horizontal-ivory.svg",
   description:
-    'Reliable, seamless, and luxury-first travel experiences across retail and B2B segments, anchored by our signature "Velvet Services".',
+    "Chauffeur-driven travel for corporates, institutions and discerning travellers, delivered to the Velvet Service standard on every booking.",
   listLinks: [
     {
       title: "Quick Links",
@@ -67,7 +67,7 @@ export const WebsiteFooterLinks: FooterLinks = {
         },
         {
           label: "Services",
-          href: "/services",
+          href: "/services/hourly-rental",
         },
 
         {
@@ -102,7 +102,7 @@ export const WebsiteFooterLinks: FooterLinks = {
       ],
     },
     {
-      title: "Services Offerings",
+      title: "Our Services",
       links: [
         {
           label: "Hourly & City Rentals",

@@ -37,18 +37,20 @@ const VelvetStandard: React.FC<VelvetStandardProps> = ({
           </ul>
         </div>
 
-        <div className="relative max-lg:mb-16">
+        <div className={`relative ${testimonial ? "max-lg:mb-16" : ""}`}>
           <div className="w-full relative aspect-4/3 rounded-3xl overflow-hidden">
             <Image src={image} alt={title} fill className="object-cover" />
           </div>
-          <div className="absolute -bottom-12 left-4 md:-left-6 max-w-60 rounded-2xl bg-white p-5 shadow-xl space-y-2">
-            <p className="font-semibold text-dark text-sm">
-              {testimonial.eyebrow}
-            </p>
-            <p className="text-xs italic text-secondary">
-              &ldquo;{testimonial.quote}&rdquo;
-            </p>
-          </div>
+          {testimonial && (
+            <div className="absolute -bottom-12 left-4 md:-left-6 max-w-60 rounded-2xl bg-white p-5 shadow-xl space-y-2">
+              <p className="font-semibold text-dark text-sm">
+                {testimonial.eyebrow}
+              </p>
+              <p className="text-xs italic text-secondary">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
+            </div>
+          )}
         </div>
       </div>
     </SectionWithContainer>

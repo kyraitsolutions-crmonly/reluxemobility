@@ -35,7 +35,7 @@ export interface VelvetStandardProps {
     title: string;
     description: string;
   }[];
-  testimonial: {
+  testimonial?: {
     eyebrow: string;
     quote: string;
   };

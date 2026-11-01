@@ -1,5 +1,6 @@
 import PageHero from "@/components/common/PageHero";
 import type { Metadata } from "next";
+import { baseOpenGraph } from "@/utils/seo";
 import { notFound } from "next/navigation";
 import CategoryHighlights from "./components/CategoryHighlights";
 import DiscoverMore from "./components/DiscoverMore";
@@ -14,7 +15,7 @@ interface Params {
   params: Promise<{ slug: string }>;
 }
 
-const siteUrl = "https://www.reluxemobility.com";
+const siteUrl = "https://reluxemobility.com";
 
 export async function generateStaticParams() {
   return fleetCategoryPageData.map((category) => ({
@@ -48,10 +49,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       alternates: {
         canonical: `${siteUrl}/fleet/${category.slug}`,
         languages: {
-          "en-US": `${siteUrl}/fleet/${category.slug}`,
+          "en-IN": `${siteUrl}/fleet/${category.slug}`,
         },
       },
       openGraph: {
+        ...baseOpenGraph,
         title: category.metaData.title,
         description: category.metaData.description,
         images: [category.hero.image],
@@ -78,7 +80,7 @@ export default async function FleetCategoryPage({ params }: Params) {
       <PageHero
         {...pageData.hero}
         breadcrumbs={[
-          { label: "Fleet", href: "/fleet" },
+          { label: "Fleet" },
           { label: pageData.hero.highlight },
         ]}
       />

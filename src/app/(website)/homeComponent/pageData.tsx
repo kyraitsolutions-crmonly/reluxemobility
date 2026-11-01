@@ -4,19 +4,18 @@ import {
   ConciergeIcon,
   CustmizedBillingIcon,
   HeadPhoneIcon,
-  HighSecurityIcon,
   MailIcon,
   TickIcon,
 } from "@/utils/icons";
 import { contact } from "@/utils/constent";
-import { LuMapPin } from "react-icons/lu";
+import { LuMapPin, LuShieldCheck } from "react-icons/lu";
 
 export const homePageData = {
   hero: {
     eyebrow: "PREMIUM CAR RENTAL & CHAUFFEUR MOBILITY SOLUTIONS",
     title: "Reluxe Mobility: Crafting Excellence in Every Mile",
     description:
-      'Reliable, seamless luxury-first travel for retail and B2B — our signature white-glove "Velvet Services" for corporate clients.',
+      "Immaculate cars, trained chauffeurs and a team that stays with every trip. Mobility for corporates, institutions and discerning travellers.",
     buttons: [
       {
         label: "Book Now",
@@ -34,14 +33,15 @@ export const homePageData = {
       },
       {
         title: "Velvet Standard",
-        description: "Spotless, sanitized cars & uniformed chauffeurs",
+        description: "Detailed cars, uniformed chauffeurs, live-tracked trips",
       },
       {
         title: "Trusted Partner",
-        description: "Serving major PSUs and Government bodies",
+        description: "70+ PSUs, corporates & government bodies",
       },
     ],
-    img: "/home/hero.jpg",
+    // Banner slides (16:9, subject on the right). A slide only appears once its file is in /public.
+    images: ["/home/hero.jpg", "/hero-2.png", "/hero-3.png", "/hero-4.png", "/hero-5.png"],
   },
 
   journeySection: {
@@ -50,8 +50,8 @@ export const homePageData = {
       "Tell us where you need to travel and how you want to move. We tailor the vehicle, service level, and support to your trip.",
     benefits: [
       {
-        title: "Instant Confirmation",
-        description: "Receive your booking details right away.",
+        title: "Get Best Price",
+        description: "Share your trip and we'll come back with the best price.",
         icon: <TickIcon />,
       },
       {
@@ -63,38 +63,42 @@ export const homePageData = {
   },
 
   serviceOfferings: {
-    title: "Service Offerings",
+    title: "Car Rental Services",
     description:
-      "Tailored mobility solutions designed for those who value time, discretion, and uncompromising comfort.",
+      "Chauffeur-driven cars for every kind of trip. Pick a service and we'll open the booking form for you.",
 
     items: [
       {
-        id: "hourly-rental",
+        id: "round-trip",
         number: "01",
+        title: "Outstation Round Trip",
+        description:
+          "There and back with the same car and chauffeur, with up to 5 stops along the way.",
+        href: "/?trip=round-trip#booking",
+      },
+      {
+        id: "one-way",
+        number: "02",
+        title: "One Way Drop",
+        description:
+          "City-to-city drops anywhere in India. Pay for one way, not the return.",
+        href: "/?trip=one-way#booking",
+      },
+      {
+        id: "local",
+        number: "03",
         title: "Hourly Rental",
         description:
-          "Flexible city packages: 4h/40km, 8h/80km and full-day options.",
+          "A car and chauffeur at your disposal: 4 hrs / 40 km, 8 hrs / 80 km or 12 hrs / 120 km.",
+        href: "/?trip=local#booking",
       },
       {
-        id: "airport-transfers",
-        number: "02",
-        title: "Airport Transfers",
-        description:
-          "Guaranteed on-time arrivals with executive greeting services.",
-      },
-      {
-        id: "outstation-travel",
-        number: "03",
-        title: "Outstation Travel",
-        description:
-          "One-way and round trips with our elite highway chauffeurs.",
-      },
-      {
-        id: "velvet-service",
+        id: "airport",
         number: "04",
-        title: "Velvet Service",
+        title: "Airport Transfer",
         description:
-          "Dedicated account managers, customized billing and secure travel protocols.",
+          "Pickups and drops at major airports, straight to or from your exact address.",
+        href: "/?trip=airport#booking",
       },
     ],
   },
@@ -107,17 +111,17 @@ export const homePageData = {
     items: [
       {
         id: "compact-sedans",
-        title: "Compact / Sedans",
+        title: "Essential Sedans",
         vehicles: ["Maruti Suzuki Dzire", "Honda Amaze"],
       },
       {
         id: "premium-sedans",
-        title: "Premium Sedans",
+        title: "Executive Sedans",
         vehicles: ["Honda City", "Maruti Suzuki Ciaz"],
       },
       {
         id: "premium-suvs",
-        title: "Premium SUVs",
+        title: "Premium SUVs & MUVs",
         vehicles: ["Toyota Innova Hycross", "Maruti Suzuki Invicto"],
       },
       {
@@ -127,7 +131,7 @@ export const homePageData = {
       },
       {
         id: "luxury-fleet",
-        title: "Luxury Fleet",
+        title: "Luxury Series",
         vehicles: ["Mercedes-Benz", "BMW", "Audi"],
       },
     ],
@@ -137,7 +141,7 @@ export const homePageData = {
     id: "fleet",
     title: "Browse Our Fleet",
     description:
-      "A curated collection of the world's most prestigious vehicles, maintained to the highest standards.",
+      "Five classes, one standard. Every vehicle is professionally detailed and safety-checked before it reaches you.",
 
     viewAllLabel: "View All Models",
     viewAllHref: "#fleet",
@@ -146,11 +150,12 @@ export const homePageData = {
       {
         id: "premium",
         category: "Executive Choice",
-        title: "Premium Collection",
-        tier: "Premium",
+        title: "Executive Sedans",
+        tier: "Executive",
         description:
           "Honda City, Maruti Suzuki Ciaz — the standard of corporate efficiency and comfort.",
-        image: "/fleet/cars/innova-hycross.jpg",
+        image: "/fleet/cars/city.jpg",
+        href: "/fleet/premium-sedans",
       },
       {
         id: "luxury",
@@ -160,15 +165,17 @@ export const homePageData = {
         description:
           "Mercedes-Benz, BMW, Audi — first-class experience with signature chauffeur service.",
         image: "/fleet/cars/e-class.jpg",
+        href: "/fleet/luxury-fleet",
       },
       {
         id: "economy",
         category: "Reliable Utility",
-        title: "Economy Plus",
-        tier: "Economy",
+        title: "Essential Sedans",
+        tier: "Essential",
         description:
           "Maruti Suzuki Dzire, Honda Amaze — reliable and cost-effective daily travel solutions.",
         image: "/fleet/cars/dzire.jpg",
+        href: "/fleet/compact-sedans",
       },
     ],
   },
@@ -177,7 +184,7 @@ export const homePageData = {
     id: "corporate-velvet-service",
     title: "Corporate & PSU Velvet Service",
     description:
-      "Reliable corporate mobility with customized billing, dedicated account managers and executive-level support for PSU and corporate clients.",
+      "Velvet Corporate: a dedicated account manager, consolidated billing and protocol-ready travel for PSUs and corporates.",
     image: "/home/psu.png",
     features: [
       {
@@ -188,7 +195,7 @@ export const homePageData = {
       },
       {
         id: "customized-billing",
-        title: "Customized Billing",
+        title: "Consolidated Billing",
         description: "Transparent reporting and invoices.",
         icon: <CustmizedBillingIcon />,
       },
@@ -196,7 +203,7 @@ export const homePageData = {
         id: "high-security",
         title: "High-Security",
         description: "Strict mobility protocol compliance.",
-        icon: <HighSecurityIcon />,
+        icon: <LuShieldCheck />,
       },
       {
         id: "concierge-level",
@@ -208,7 +215,7 @@ export const homePageData = {
   },
 
   trustedOrganizations: {
-    title: "Trusted by Major PSUs & Government Bodies",
+    title: "Trusted by 70+ PSUs, Corporates & Government Bodies",
     description: "Serving leading public sector enterprises across the nation.",
 
     organizations: [
@@ -269,7 +276,7 @@ export const homePageData = {
       {
         label: contact.address,
         href: contact.addressLink,
-        icon: <LuMapPin className="text-[#E0C7A3]" />,
+        icon: <LuMapPin />,
       },
     ],
   },

@@ -43,7 +43,7 @@ export const contactUsPageData = {
 
     trustedClients: {
       eyebrow: "Trusted Clients",
-      title: "Trusted by PSUs & Government",
+      title: "Trusted by 70+ PSUs, Corporates & Government Bodies",
       description:
         "Trusted by SAI, IOCL and major public sector enterprises.",
     },
@@ -69,9 +69,9 @@ export const contactUsPageData = {
     items: [
       {
         id: "book-velvet-service",
-        question: "How do I book a Velvet Service?",
+        question: "How do I book?",
         answer:
-          "Velvet Services are tailored for corporate clients. You can request access via the contact form or by calling our dedicated corporate desk.",
+          "Call or WhatsApp us, or send an enquiry. Every booking is delivered to our Velvet Service standard, and organisations can open a Velvet Corporate account with a dedicated account manager.",
       },
       {
         id: "cancellation-policy",
@@ -89,7 +89,7 @@ export const contactUsPageData = {
         id: "ev-options",
         question: "Do you provide EV options for B2B?",
         answer:
-          'Yes, our "Green Fleet" is specifically designed to help corporate partners meet their ESG goals with zero-emission luxury transport.',
+          "Yes. Our Green Fleet helps organisations meet sustainability goals with zero-tailpipe-emission travel.",
       },
     ],
   },

@@ -20,6 +20,8 @@ export const tripFromSearchParams = (params: URLSearchParams): TripDetails | nul
     date: read("date"),
     returnDate: read("returnDate"),
     time: read("time"),
+    category: read("category"),
+    car: read("car"),
   };
 
   return requiredKeys.every((key) => trip[key]) ? trip : null;

@@ -46,4 +46,4 @@ export const submitButtonClass = (colorClassName: string) =>
   `h-12 w-full rounded-xl px-6 text-sm font-semibold text-white transition focus-visible:outline-2 focus-visible:outline-offset-2 ${colorClassName}`;
 
 export const darkSubmit = "bg-dark hover:bg-navy-deep focus-visible:outline-dark";
-export const accentSubmit = "bg-accent hover:bg-[#866841] focus-visible:outline-accent";
+export const accentSubmit = "bg-accent hover:bg-[#735733] focus-visible:outline-accent";

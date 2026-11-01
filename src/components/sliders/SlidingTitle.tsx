@@ -1,57 +1,47 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import "./sliding.title.scss";
 
-export default function SlidingTitle({
-  items,
-  ariaHidden = false,
-}: {
+interface SlidingTitleProps {
   items: { id: string; name: string; logo: string }[];
   ariaHidden?: boolean;
-}) {
-  const titles = items;
+  // Seconds each logo takes to cross, so the speed stays the same however many logos there are.
+  secondsPerItem?: number;
+}
+
+// Infinite logo marquee. The list is rendered twice and the strip slides by exactly one copy,
+// so the loop has no jump or gap. It's pure CSS (GPU transform), pauses on hover and
+// stops for visitors who prefer reduced motion.
+export default function SlidingTitle({ items, ariaHidden = false, secondsPerItem = 2.5 }: SlidingTitleProps) {
+  const style = { "--marquee-duration": `${items.length * secondsPerItem}s` } as CSSProperties;
 
   return (
-    <div
-      className="relative overflow-hidden py-3 max_screen_width"
-      aria-hidden={ariaHidden}
-    >
-      <div className="marquee-wrapper">
-        <div className="marquee-track">
-          {titles.map((t, i) => (
-            <span
-              key={i}
-              aria-hidden={i >= items.length}
-              className="marquee-item  tracking-widest"
-            >
-              <span className=" border border-line rounded-2xl flex flex-col justify-between gap-4 items-start py-3 px-4 w-full h-full">
-                  <Image
-                    src={t.logo}
-                    alt={t.name}
-                    width={100}
-                    height={100}
-                    className="object-contain"
-                  />
-                <span className="font-semibold text-center flex items-center justify-center w-full">{t.name}</span>
-              </span>
-            </span>
-          ))}
-        </div>
+    <div className="marquee max_screen_width" aria-hidden={ariaHidden} style={style}>
+      <div className="marquee-strip">
+        {[0, 1].map((copy) => (
+          <ul className="marquee-track" key={copy} aria-hidden={copy === 1 || undefined}>
+            {items.map((item) => (
+              <li className="marquee-item" key={item.id}>
+                <div className="flex h-full flex-col items-center justify-between gap-3 rounded-2xl border border-line bg-white px-4 pt-5 pb-4 transition-shadow hover:shadow-md">
+                  <div className="relative h-20 w-full">
+                    <Image
+                      src={item.logo}
+                      // The name is printed right under the logo, so the image itself needs no alt text.
+                      alt=""
+                      fill
+                      sizes="140px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="w-full truncate text-center text-sm font-semibold tracking-widest text-dark">
+                    {item.name}
+                  </span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        ))}
       </div>
     </div>
   );
 }
-
-export const ICon = () => (
-  <svg
-    width={12}
-    height={12}
-    viewBox="0 0 12 12"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M5.544 11.077L-4.60818e-06 5.544L5.544 3.57628e-07L11.077 5.544L5.544 11.077ZM5.544 10.076L10.076 5.544L5.544 1.001L1.012 5.544L5.544 10.076ZM5.544 7.843L3.234 5.544L5.544 3.234L7.854 5.544L5.544 7.843Z"
-      fill="#E0C7A3"
-    />
-  </svg>
-);

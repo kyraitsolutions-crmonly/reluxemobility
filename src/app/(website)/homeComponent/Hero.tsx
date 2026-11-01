@@ -1,22 +1,27 @@
 import { HeroProps } from "@/@types/homePageType";
 import LinkButton from "@/components/buttons/LinkButton";
 import { Container, Section } from "@/components/sectionComponants";
-import Image from "next/image";
+import { existsSync } from "node:fs";
+import path from "node:path";
+import HeroBackground from "./HeroBackground";
+
+// Slides whose file isn't in /public yet are skipped, so new banner images can be added one at a time.
+const inPublicFolder = (src: string) => existsSync(path.join(process.cwd(), "public", src));
 
 const Hero: React.FC<HeroProps> = ({
   eyebrow,
   title,
   description,
   buttons,
-  img,
+  images,
   highlights,
 }) => {
   return (
     <Section
       defaultPadding={false}
-      className="relative w-full z-0 aspect-4/10 min-[375px]:aspect-4/10 min-[430px]:aspect-4/8.25 md:aspect-16/11 lg:aspect-video xl:aspect-16/6.5"
+      className="relative w-full z-0 overflow-hidden aspect-4/10 min-[375px]:aspect-4/10 min-[430px]:aspect-4/8.25 md:aspect-16/11 lg:aspect-video xl:aspect-16/6.5"
     >
-      <Image src={img} alt={title} fill priority sizes="100vw" className="object-cover lg:object-left max-lg:object-right/[55%]" />
+      <HeroBackground images={images.filter(inPublicFolder)} alt={title} />
       <div className="absolute inset-0 bg-navy-deep/45 z-10" />
       <div className="absolute inset-0 z-20 flex items-center justify-center text-white">
         <Container className="space-y-12">

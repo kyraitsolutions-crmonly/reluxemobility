@@ -1,7 +1,9 @@
 "use client";
 
+import { useLeadSubmit } from "@/hooks/useLeadSubmit";
 import { useId, useState, type FormEvent } from "react";
 import CustomSelect from "./CustomSelect";
+import FormStatus from "./FormStatus";
 import { darkSubmit, errorTextClass, inputClass, labelClass, submitButtonClass, textareaClass } from "./formStyles";
 
 type TextField = {
@@ -47,17 +49,27 @@ export default function Form2() {
   const id = useId();
   const [values, setValues] = useState<FormValues>(initialValues);
   const [enquiryError, setEnquiryError] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+  const { submitLead, status, error, isSubmitting, resetStatus } = useLeadSubmit();
 
   const updateField = <K extends keyof FormValues>(field: K, value: FormValues[K]) => {
     setValues((current) => ({ ...current, [field]: value }));
-    setSubmitted(false);
+    if (status !== "submitting") resetStatus();
     if (field === "enquiryType") setEnquiryError(false);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+
+    const sent = await submitLead({
+      formName: "Home Enquiry",
+      name: values.name,
+      email: values.email,
+      phone: values.phone,
+      message: values.requirements,
+      customFields: { enquiryType: values.enquiryType },
+    });
+
+    if (sent) setValues(initialValues);
   };
 
   return (
@@ -125,15 +137,11 @@ export default function Form2() {
           />
         </div>
 
-        <button className={submitButtonClass(darkSubmit)} type="submit">
-          Submit Request
+        <button className={`${submitButtonClass(darkSubmit)} disabled:opacity-60`} disabled={isSubmitting} type="submit">
+          {isSubmitting ? "Sending…" : "Submit Request"}
         </button>
 
-        {submitted && (
-          <p className="text-xs text-dark" role="status">
-            Your details are ready. Connect the form to your enquiry API to submit them.
-          </p>
-        )}
+        <FormStatus status={status} error={error} />
       </form>
     </div>
   );

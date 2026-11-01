@@ -1,6 +1,7 @@
 import { FleetCategoriesProps } from "@/@types/homePageType";
 import { SectionWithContainer } from "@/components/sectionComponants";
 import { SectionHeading } from "@/components/typography";
+import Link from "next/link";
 
 const FleetCategories: React.FC<FleetCategoriesProps> = ({
   title,
@@ -27,11 +28,14 @@ export default FleetCategories;
 
 export const FleetCategoriesCard: React.FC<
   FleetCategoriesProps["items"][0] & { className?: string }
-> = ({ title, vehicles, className="" }) => {
+> = ({ id, title, vehicles, className="" }) => {
   return (
-    <div className="flex flex-col md:items-center md:text-center space-y-2 md:px-6 md:py-5 max-md:p-4 border-2 border-tertiary rounded-2xl">
+    <Link
+      href={`/fleet/${id}`}
+      className="flex flex-col md:items-center md:text-center space-y-2 md:px-6 md:py-5 max-md:p-4 border-2 border-tertiary rounded-2xl transition hover:-translate-y-1 hover:border-dark hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-dark"
+    >
       <h2 className="text-xl font-semibold">{title}</h2>
       <p className="text-secondary text-sm">{vehicles.join(", ")}</p>
-    </div>
+    </Link>
   );
 };

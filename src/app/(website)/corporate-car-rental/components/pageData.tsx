@@ -31,11 +31,11 @@ export const corporatePageData = {
     image: "/fleet/8.png",
     points: [
       "Dedicated account manager for your organization",
-      "Customized billing with consolidated monthly invoices",
+      "Consolidated billing with one monthly invoice",
       "High-security protocol compliance for VIP movement",
     ],
     stats: [
-      { value: "59", label: "PSUs & Government Bodies" },
+      { value: "70+", label: "PSUs, Corporates & Gov. Bodies" },
       { value: "5", label: "Fleet Categories" },
       { value: "24/7", label: "Real-Time Support" },
     ],
@@ -54,7 +54,7 @@ export const corporatePageData = {
   },
 
   trustedOrganizations: {
-    title: "Trusted by Major PSUs & Government Bodies",
+    title: "Trusted by 70+ PSUs, Corporates & Government Bodies",
     description:
       "A proven track record serving leading public sector enterprises across the nation.",
     organizations: [
@@ -111,7 +111,7 @@ export const corporatePageData = {
       },
       {
         id: "customized-billing",
-        title: "Customized Billing",
+        title: "Consolidated Billing",
         description:
           "Consolidated monthly invoices, cost-center tagging and transparent trip-level reporting.",
         icon: <LuFileText />,
@@ -183,7 +183,7 @@ export const corporatePageData = {
         description:
           "Secure, discreet mobility for senior officials and visiting delegations.",
         image: "/fleet/cars/e-class.jpg",
-        href: "/services/corporate-psu",
+        href: "#corporate-enquiry",
       },
     ],
   },
@@ -241,7 +241,7 @@ export const corporatePageData = {
         id: "ev-options",
         question: "Can we choose electric vehicles?",
         answer:
-          "Yes. Our Green Fleet of premium electric SUVs helps organizations meet their sustainability and ESG goals without compromising on comfort.",
+          "Yes. Our Green Fleet of electric SUVs helps organisations meet their sustainability and ESG goals without compromising on comfort.",
       },
     ],
   },

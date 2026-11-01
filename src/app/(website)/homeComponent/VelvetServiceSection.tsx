@@ -25,19 +25,19 @@ const VelvetServiceSection: React.FC<VelvetServiceSectionProps> = ({
           <div className="w-full relative aspect-4/3 rounded-3xl overflow-hidden lg:hidden">
             <Image src={image} alt={title} fill className="object-cover" />
           </div>
-          <p className="text-white">{description}</p>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4">
+          <p className="text-ivory/80">{description}</p>
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-8 gap-y-7 pt-2">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="grid grid-cols-[auto_1fr] items-center gap-4 text-white"
+                className="grid grid-cols-[auto_1fr] items-start gap-4 text-white"
               >
-                <div className="w-12 aspect-square rounded-full flex items-center justify-center bg-dark">
+                <div className="w-12 aspect-square rounded-full flex items-center justify-center bg-beige/10 ring-1 ring-beige/30 text-beige text-xl">
                   {feature.icon}
                 </div>
-                <div className="space-y-2">
-                  <p className=" font-semibold">{feature.title}</p>
-                  <p className="text-secondary text-sm">
+                <div className="space-y-1">
+                  <p className="font-semibold">{feature.title}</p>
+                  <p className="text-ivory/70 text-sm leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

@@ -8,8 +8,8 @@ import {
   LuRoute,
   LuShieldCheck,
   LuShieldHalf,
-  LuUsers,
-  LuWifi
+  LuLaptop,
+  LuUsers
 } from "react-icons/lu";
 
 export const serviceDetailSharedData = {
@@ -64,11 +64,11 @@ export const serviceDetailSharedData = {
       },
     ],
     vehicleClasses: [
-      "Luxury Fleet (Mercedes-Benz, BMW, Audi)",
-      "Premium Sedans (Honda City, Maruti Suzuki Ciaz)",
-      "Premium SUVs / MUVs (Innova Hycross, Invicto)",
-      "Green Fleet (Premium Electric SUVs)",
-      "Compact / Sedans (Dzire, Amaze)",
+      "Essential Sedans (Dzire, Amaze)",
+      "Executive Sedans (Honda City, Maruti Suzuki Ciaz)",
+      "Premium SUVs & MUVs (Innova Hycross, Invicto)",
+      "Green Fleet (Electric SUVs)",
+      "Luxury Series (Mercedes-Benz, BMW, Audi)",
     ],
     submitLabel: "Confirm Inquiry",
   },
@@ -105,8 +105,8 @@ export const serviceDetailPageData: ServiceDetailData[] = [
     overview: {
       title: "Redefining Urban Flexibility",
       paragraphs: [
-        'Reluxe Mobility\'s Hourly Rental service is designed for those whose schedules demand both precision and adaptability. Whether it\'s a day of high-stakes corporate meetings across the city or a personalized shopping excursion, our "As-Directed" service ensures your vehicle is always waiting, just steps away.',
-        'Every journey is supported by our signature "Velvet Service" standards. This means a meticulously sanitized vehicle, a uniformed chauffeur who understands the nuances of executive etiquette, and a silent, comfortable cabin that serves as your mobile office.',
+        'Reluxe Mobility\'s Hourly Rental service is designed for those whose schedules demand both precision and adaptability. Whether it\'s a day of high-stakes corporate meetings across the city or a personalised shopping excursion, our "As-Directed" service ensures your vehicle is always waiting, just steps away.',
+        'Every journey is supported by our signature "Velvet Service" standards. This means a meticulously sanitised vehicle, a uniformed chauffeur who understands the nuances of executive etiquette, and a silent, comfortable cabin that serves as your mobile office.',
       ],
       features: [
         {
@@ -125,10 +125,10 @@ export const serviceDetailPageData: ServiceDetailData[] = [
         },
         {
           id: "mobile-executive-suite",
-          title: "Mobile Executive Suite",
+          title: "A Quiet Workspace on Wheels",
           description:
-            "Stay productive with high-speed Wi-Fi, charging ports, and a quiet environment designed for confidential discussions.",
-          icon: <LuWifi />,
+            "Charging points and a calm cabin for confidential calls.",
+          icon: <LuLaptop />,
         },
         {
           id: "professional-discretion",
@@ -144,7 +144,7 @@ export const serviceDetailPageData: ServiceDetailData[] = [
       items: [
         { id: "half-day", label: "Business Half-Day", value: "4 Hours / 40 Kilometers" },
         { id: "executive-day", label: "Executive Day", value: "8 Hours / 80 Kilometers" },
-        { id: "full-day", label: "Full-Day Package", value: "Extended Full-Day Usage" },
+        { id: "full-day", label: "Full-Day Package", value: "12 Hours / 120 Kilometers" },
       ],
       inclusions: [
         "Complimentary bottled water & wipes",
@@ -193,7 +193,7 @@ export const serviceDetailPageData: ServiceDetailData[] = [
           id: "meet-and-greet",
           title: "Meet & Greet",
           description:
-            "Your chauffeur waits at arrivals with a personalized name board and assists with all luggage.",
+            "Your chauffeur waits at arrivals with a personalised name board and assists with all luggage.",
           icon: <LuUsers />,
         },
         {
@@ -252,7 +252,7 @@ export const serviceDetailPageData: ServiceDetailData[] = [
       title: "The Open Road, Elevated",
       paragraphs: [
         "Our outstation service is designed for long-distance comfort. Whether it's a site visit in a neighbouring city, a weekend family trip or a multi-day business tour, we pair you with a high-spec vehicle and a chauffeur trained for highway safety and regional navigation.",
-        "Every route is planned in advance with scheduled rest stops, and our 24/7 command center tracks your journey from departure to arrival — so you can work, rest or simply enjoy the view.",
+        "Every route is planned in advance with scheduled rest stops, and our 24/7 command centre tracks your journey from departure to arrival — so you can work, rest or simply enjoy the view.",
       ],
       features: [
         {

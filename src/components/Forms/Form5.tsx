@@ -1,8 +1,10 @@
 "use client";
 
 import { CorporateLeadFormProps } from "@/@types/corporatePageType";
+import { useLeadSubmit } from "@/hooks/useLeadSubmit";
 import { useId, useState, type FocusEvent, type FormEvent } from "react";
 import CustomSelect from "./CustomSelect";
+import FormStatus from "./FormStatus";
 import { accentSubmit, errorTextClass, inputClass, labelClass, submitButtonClass } from "./formStyles";
 
 type FieldName = "name" | "company" | "email" | "phone" | "businessVolume";
@@ -27,7 +29,9 @@ const textFields: TextField[] = [
 const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessVolumes, submitLabel }) => {
   const id = useId();
   const [errors, setErrors] = useState<Partial<Record<FieldName, boolean>>>({});
-  const [submitted, setSubmitted] = useState(false);
+  const { submitLead, status, error, isSubmitting, resetStatus } = useLeadSubmit();
+  // Editing the form again clears the last "sent" or error message.
+  const clearStatus = () => status !== "submitting" && resetStatus();
 
   const setError = (name: string, hasError: boolean) =>
     setErrors((current) => ({ ...current, [name]: hasError }));
@@ -35,9 +39,22 @@ const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessV
   const checkField = (event: FocusEvent<HTMLInputElement>) =>
     setError(event.currentTarget.name, !event.currentTarget.validity.valid);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const read = (key: string) => String(data.get(key) ?? "");
+    const sent = await submitLead({
+      formName: "Corporate Account Request",
+      name: read("name"),
+      email: read("email"),
+      phone: read("phone"),
+      company: read("company"),
+      customFields: { businessVolume: read("businessVolume") },
+    });
+
+    if (sent) form.reset();
   };
 
   return (
@@ -49,7 +66,7 @@ const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessV
         className="mt-6 flex flex-col gap-5"
         onSubmit={handleSubmit}
         onInvalidCapture={(event) => setError((event.target as HTMLInputElement).name, true)}
-        onChange={() => setSubmitted(false)}
+        onChange={() => clearStatus()}
       >
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
           {textFields.map((field) => {
@@ -97,7 +114,7 @@ const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessV
             placeholder="Select approximate monthly spend"
             onChange={() => {
               setError("businessVolume", false);
-              setSubmitted(false);
+              clearStatus();
             }}
             hasError={!!errors.businessVolume}
             required
@@ -107,15 +124,11 @@ const Form5: React.FC<CorporateLeadFormProps> = ({ title, description, businessV
           )}
         </div>
 
-        <button className={`mt-1 uppercase tracking-wider ${submitButtonClass(accentSubmit)}`} type="submit">
-          {submitLabel}
+        <button className={`mt-1 uppercase tracking-wider ${submitButtonClass(accentSubmit)} disabled:opacity-60`} disabled={isSubmitting} type="submit">
+          {isSubmitting ? "Sending…" : submitLabel}
         </button>
 
-        {submitted && (
-          <p className="text-xs text-dark" role="status">
-            Your details are ready. Connect the form to your enquiry API to submit them.
-          </p>
-        )}
+        <FormStatus status={status} error={error} />
       </form>
     </div>
   );

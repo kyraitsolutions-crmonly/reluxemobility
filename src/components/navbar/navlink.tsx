@@ -67,7 +67,7 @@ export const NavLink = {
     },
     {
       label: "Book Now",
-      href: "/contact-us#contact",
+      href: "/#booking",
     },
   ],
 };

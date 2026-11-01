@@ -1,7 +1,7 @@
 import { isPageLink, NavLink } from "@/components/navbar/navlink";
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://www.reluxemobility.com";
+const siteUrl = "https://reluxemobility.com";
 
 const lastModified = new Date("2026-10-17");
 
