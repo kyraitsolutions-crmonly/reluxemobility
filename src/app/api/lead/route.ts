@@ -1,11 +1,11 @@
 import { LeadPayload } from "@/@types/leadType";
 
 export async function POST(request: Request) {
-  const url = process.env.LEAD_WEBHOOK_URL;
-  const token = process.env.webhook_3607ce32eb;
+  const url = "https://api.v1.kyraitsolutions.com/api/webhook/6afb234bb851e4595a251bac/lead";
+  const token = "webhook_11f788d3564a201ec0f6c579c131e253f2c14406ffcb1e0336d2e785e576d00a";
 
   if (!url || !token) {
-    console.error("Lead webhook is not configured: set LEAD_WEBHOOK_URL and webhook_3607ce32eb");
+    console.error("Lead webhook is not configured: set LEAD_WEBHOOK_URL and token in your environment variables.");
     return Response.json({ ok: false, error: "Enquiries are temporarily unavailable." }, { status: 500 });
   }
 
